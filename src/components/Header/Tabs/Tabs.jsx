@@ -23,6 +23,11 @@ const StyledTabs = styled((props) => (
     width: "100%",
     backgroundColor: "#2AA7FF",
   },
+  "& .css-1wxkzlj-MuiTabs-flexContainer":{
+    display:'flex',
+    justifyContent:'space-around'
+  }
+  
 });
 
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
@@ -53,12 +58,13 @@ export default function CustomizedTabs({ pages }) {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ bgcolor: "transparent" }}>
+    <Box  sx={{ width: "100%" }}>
+      <Box  sx={{ bgcolor: "transparent" }}>
         <StyledTabs
           value={value}
           onChange={handleChange}
           aria-label="styled tabs example"
+          
         >
           {pages.map((page) => (
             <StyledTab label={page} />

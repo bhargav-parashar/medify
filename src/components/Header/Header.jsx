@@ -58,7 +58,8 @@ function ResponsiveAppBar() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "90%",
+              width: {xs:"100%",lg:"82%"},
+              
             }}
           >
             <Box
@@ -131,22 +132,6 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              {/* {pages.map((page) => (
-                <Button
-                  size="small"
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "#102851",
-                    display: "block",
-                    textTransform: "none",
-                    fontSize: "0.75rem",
-                  }}
-                >
-                  {page}
-                </Button>
-              ))} */}
               <Tabs pages={pages}/>
               <Button
                 variant="contained"
@@ -156,9 +141,12 @@ function ResponsiveAppBar() {
                   background: "#2AA8FF",
                   display: "block",
                   textTransform: "none",
+                  fontSize: "0.75rem",
+                  width:'120px',
+                  marginLeft:'20px'
                 }}
               >
-                Bookings
+                My Bookings
               </Button>
             </Box>
             
