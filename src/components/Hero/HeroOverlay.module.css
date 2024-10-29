@@ -1,0 +1,29 @@
+@media (min-width: 900px) {
+  .heroOverlay {
+    height: 50%;
+    width: 81%;
+    background: #ffffff;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    box-shadow: 6px 6px 35px 0px #1028511c;
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
+@media (max-width: 900px) {
+  .heroOverlay {
+    height: 50%;
+    width: 81%;
+    background: #ffffff;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    box-shadow: 6px 6px 35px 0px #1028511c;
+  }
+}

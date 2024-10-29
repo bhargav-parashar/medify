@@ -66,8 +66,8 @@ export default function CustomizedTabs({ pages }) {
           aria-label="styled tabs example"
           
         >
-          {pages.map((page) => (
-            <StyledTab label={page} />
+          {pages.map((page,idx) => (
+            <StyledTab key={idx} label={page} />
           ))}
         </StyledTabs>
       </Box>

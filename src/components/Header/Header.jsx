@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Logo from "../../assets/Logo/Logo.svg";
 import styles from "./Header.module.css";
 import Tabs from "./Tabs/Tabs";
+import ButtonPrimary from "../Buttons/ButtonPrimary.jsx";
 
 const pages = [
   "Find Doctors",
@@ -36,7 +37,6 @@ function ResponsiveAppBar() {
     <>
       <Box className={styles.topMessage}>
         <Typography
-          
           sx={{
             fontSize: { xs: "5.5px", sm: "10px", md: "14px" },
             textAlign: "center",
@@ -47,10 +47,18 @@ function ResponsiveAppBar() {
           cleanliness.
         </Typography>
       </Box>
-      <AppBar position="static" color="transaparent" elevation={0}>
+      <AppBar position="static" elevation={0}>
         <Container
           maxWidth="xl"
-          sx={{ display: "flex", justifyContent: "center" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            position: "fixed",
+            top: "40px",
+            zIndex: "1000",
+            background: 'linear-gradient(81deg, rgba(231,240,255,1) , rgba(232, 241, 255,1)  )'
+          
+          }}
         >
           <Toolbar
             disableGutters
@@ -58,8 +66,7 @@ function ResponsiveAppBar() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: {xs:"100%",lg:"82%"},
-              
+              width: { xs: "100%", lg: "82%" },
             }}
           >
             <Box
@@ -132,28 +139,12 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              <Tabs pages={pages}/>
-              <Button
-                variant="contained"
-                sx={{
-                  my: 2,
-                  color: "#FFFFFF",
-                  background: "#2AA8FF",
-                  display: "block",
-                  textTransform: "none",
-                  fontSize: "0.75rem",
-                  width:'120px',
-                  marginLeft:'20px'
-                }}
-              >
-                My Bookings
-              </Button>
+              <Tabs pages={pages} />
+            <ButtonPrimary label="My Bookings" margin="0px 0px 0px 20px"/>
             </Box>
-            
           </Toolbar>
         </Container>
       </AppBar>
-      
     </>
   );
 }
