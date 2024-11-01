@@ -5,10 +5,12 @@ import { Box, Typography } from "@mui/material";
 import CardActionArea from "@mui/material/CardActionArea";
 
 
-export default function TextCard({id, img,label,selected,handleClick}) {
+export default function TextCard({id, img,label,selected,handleClick, grid, cardWidth, cardHeight}) {
 
     const background = id === selected? "rgba(42, 167, 255, 0.08)" : "#FAFBFE" ;
     const border = id === selected? "1px solid rgba(42, 167, 255, 1)" : "none" ;
+    const fontColor = id === selected?"#2AA7FF":"#ABB6C7";
+
 
     return (
    
@@ -16,14 +18,11 @@ export default function TextCard({id, img,label,selected,handleClick}) {
     
       sx={{
         maxWidth: 345,
-        backgroundColor:{background},
-        //width: "183px",
-        //height: "133px",
-        // width: "14vw",
-        // height: "10vw",
-        width: "18%",
-        height: "10vw",
-        border:{border}
+        backgroundColor:background,
+        width:cardWidth,
+        height:cardHeight,
+        border:border,
+        borderRadius:"10px"
       }}
     >
       <CardActionArea sx={{height:"100%"}} onClick={()=>handleClick(id)}>
@@ -39,15 +38,13 @@ export default function TextCard({id, img,label,selected,handleClick}) {
           <Box
             component="img"
             sx={{
-              // height: "50px",
-              // width: "50px",
-              height: "3vw",
-              width: "3vw",
+              height: {xs:"6vw",sm:"4vw", md:"3vw"},
+              width: {xs:"6vw",sm:"4vw", md:"3vw"}
             }}
             alt="doctors"
             src={img}
           />
-          <Typography  variant="body2" sx={{ color: "#ABB6C7", fontSize:"1.2vw" }}>
+          <Typography  variant="body2" sx={{ color:fontColor , fontSize:{xs:"1.9vw",sm:"1.5vw", md:"1.1vw"},}}>
             {label}
           </Typography>
         </CardContent>

@@ -1,14 +1,13 @@
-.hero {
-  height: 700px;
-  background: linear-gradient(
-    81deg,
-    #e7f0ff 9.01%,
-    rgba(232, 241, 255, 0.47) 89.11%
-  );
-  position: relative;
-}
-
 @media (min-width: 900px) {
+  .hero {
+    height: 700px;
+    background: linear-gradient(
+      81deg,
+      #e7f0ff 9.01%,
+      rgba(232, 241, 255, 0.47) 89.11%
+    );
+    position: relative;
+  }
   .heroText {
     position: absolute;
     top: 180px;
@@ -21,6 +20,15 @@
   }
 }
 @media (max-width: 900px) {
+  .hero {
+    height: 580px; 
+    background: linear-gradient(
+      81deg,
+      #e7f0ff 9.01%,
+      rgba(232, 241, 255, 0.47) 89.11%
+    );
+    position: relative;
+  }
   .heroText {
     position: absolute;
     top: 18%;

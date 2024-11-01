@@ -1,8 +1,8 @@
 import styles from "./Hero.module.css";
 import { Typography, Box, Button } from "@mui/material";
-import HeroDoctor from "../../assets/Images/HeroDoctor.svg";
+import HeroDoctor from "../../../assets/Images/HeroDoctor.svg";
 import HeroOverlay from "./HeroOverlay";
-import ButtonPrimary from "../Buttons/ButtonPrimary";
+import ButtonPrimary from "../../Buttons/ButtonPrimary";
 
 const Hero = () => {
   return (
@@ -11,7 +11,7 @@ const Hero = () => {
         <Typography
           variant="h5"
           sx={{
-            fontSize: { xs: "18px", sm: "25px", md: "23px " },
+            fontSize: { xs: "18px",  md: "23px " },
           }}
         >
           Skip the travel! Find Online
@@ -22,7 +22,7 @@ const Hero = () => {
             sx={{
               fontWeight: "bold",
               color: "#2AA7FF",
-              fontSize: { xs: "33px", sm: "40px", md: "45px " },
+              fontSize: { xs: "33px",  md: "45px " },
               letterSpacing: "0.1px",
               lineHeight: { xs: "1.5", md: "1" },
             }}
@@ -32,7 +32,7 @@ const Hero = () => {
           <Typography
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "33px", sm: "40px", md: "45px " },
+              fontSize: { xs: "33px",  md: "45px " },
               letterSpacing: "0.1px",
               lineHeight: { xs: "1.5", md: "1" },
             }}
@@ -46,14 +46,14 @@ const Hero = () => {
             fontWeight: "Light",
             color: "#5C6169",
             width: "80% ",
-            fontSize: { xs: "10px", sm: "15px", md: "15px " },
+            fontSize: { xs: "10px",  md: "15px " },
             lineHeight: "1.5",
           }}
         >
           Connect instantly with a 24x7 specialist or choose to video visit a
           particular doctor.
         </Typography>
-        <ButtonPrimary label="Find Centers" width="120px"/>
+        <ButtonPrimary label="Find Centers" width="120px" margin="5px 00px"/>
       </Box>
       <Box
         className={styles.doctorHeroImage}
