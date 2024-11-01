@@ -2,6 +2,7 @@ import react, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import TextCard from "../Cards/TextCard.jsx";
+import Button from "../../components/Buttons/ButtonPrimary.jsx";
 import HospitalImg from "../../assets/Images/CardImg2.svg";
 import StetoscopeImg from "../../assets/Images/CardImg6.svg";
 import Heart from "../../assets/Images/CardImg7.svg";
@@ -65,8 +66,8 @@ const Specialisations = () => {
       sx={{
         background:
           "linear-gradient( 81deg, #e7f0ff  , rgba(232, 241, 255, 0.47))",
-          
-          paddingBottom:"40px"
+
+        paddingBottom: "40px",
       }}
     >
       <Typography
@@ -143,6 +144,10 @@ const Specialisations = () => {
           ))}
         </Grid>
       </Box>
+
+      <Button label="View All" margin="40px 0px 0px 0px">
+        View All
+      </Button>
     </Box>
   );
 };
