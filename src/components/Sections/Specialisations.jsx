@@ -3,55 +3,9 @@ import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import TextCard from "../Cards/TextCard.jsx";
 import Button from "../../components/Buttons/ButtonPrimary.jsx";
-import HospitalImg from "../../assets/Images/CardImg2.svg";
-import StetoscopeImg from "../../assets/Images/CardImg6.svg";
-import Heart from "../../assets/Images/CardImg7.svg";
-import Mri from "../../assets/Images/CardImg8.svg";
-import TestTube from "../../assets/Images/CardImg9.svg";
-import Shield from "../../assets/Images/CardImg10.svg";
-import XRay from "../../assets/Images/CardImg11.svg";
-const cards = [
-  {
-    id: 1,
-    img: HospitalImg,
-    label: "Dentistry",
-  },
-  {
-    id: 2,
-    img: StetoscopeImg,
-    label: "Primary care",
-  },
-  {
-    id: 3,
-    img: Heart,
-    label: "Cardiology",
-  },
-  {
-    id: 4,
-    img: Mri,
-    label: "MRI Resonance",
-  },
-  {
-    id: 5,
-    img: TestTube,
-    label: "Blood Test",
-  },
-  {
-    id: 6,
-    img: Shield,
-    label: "Psychology",
-  },
-  {
-    id: 7,
-    img: HospitalImg,
-    label: "Laboratory",
-  },
-  {
-    id: 8,
-    img: XRay,
-    label: "X-Ray",
-  },
-];
+import cards from "../../data/specialisationCards.json";
+
+ 
 const Specialisations = () => {
   const [selectedCard, setSelectedCard] = useState(1);
   const handleClick = (id) => {

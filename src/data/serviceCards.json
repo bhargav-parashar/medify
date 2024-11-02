@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "image": "https://uploads.codesandbox.io/uploads/user/e528ea11-5d77-4e93-8d86-08f46cd33385/eKon-Doctor.png",
+        "label": "Doctors"
+    },
+    {
+        "id": 2,
+        "image": "https://uploads.codesandbox.io/uploads/user/e528ea11-5d77-4e93-8d86-08f46cd33385/O1kE-Drugstore.png",
+        "label": "Labs"
+    },
+    {
+        "id": 3,
+        "image": "https://uploads.codesandbox.io/uploads/user/e528ea11-5d77-4e93-8d86-08f46cd33385/innM-Hospital.png",
+        "label": "Hospitals"
+    },
+    {
+        "id": 4,
+        "image":"https://uploads.codesandbox.io/uploads/user/e528ea11-5d77-4e93-8d86-08f46cd33385/_Rec-Capsule.png",
+        "label": "Medical store"
+    },
+    {
+        "id": 5,
+        "image": "https://uploads.codesandbox.io/uploads/user/e528ea11-5d77-4e93-8d86-08f46cd33385/Gu_S-Ambulance.png",
+        "label": "Ambulance"
+    }
+  ]

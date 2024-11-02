@@ -1,19 +1,17 @@
-import React, { useRef, useState } from "react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-
-
-export default function Carousel({ children, slidesPerView = 1 }) {
+export default function Carousel({ data, slidesPerView = 1, spaceBetween=30 }) {
   return (
     <>
       <Swiper
+      centeredSlides={true}
         slidesPerView={slidesPerView}
-        spaceBetween={30}
-        loop={true}
+        spaceBetween={spaceBetween}
+        loop= {true}
         navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         pagination={{
@@ -27,8 +25,9 @@ export default function Carousel({ children, slidesPerView = 1 }) {
         style={{
             // border:"2px solid brown", 
             width:"90%"}}
+        
       >
-        {children.map((slide) => (
+        {data.map((slide) => (
           <SwiperSlide
            key={slide.id}
             style={{
