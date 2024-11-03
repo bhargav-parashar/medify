@@ -7,7 +7,8 @@ import Doctors from "../../components/Sections/Doctors.jsx";
 import PatientCare from "../../components/Sections/PatientCare.jsx";
 import News from "../../components/Sections/News.jsx";
 import Families from "../../components/Sections/Families.jsx";
-
+import Faq from "../../components/Sections/Faq.jsx";
+  
 const HomePage = () => {
   return (
     <Box>
@@ -19,6 +20,7 @@ const HomePage = () => {
       <PatientCare/>
       <News/>
       <Families/>
+      <Faq/>
     </Box>
   );
 };
