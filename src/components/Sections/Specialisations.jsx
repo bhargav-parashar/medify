@@ -26,10 +26,10 @@ const Specialisations = () => {
     >
       <Typography
         sx={{
-          marginTop: { xs: "25px", sm: "30px", md: "40px " },
+          marginTop: { xs: "25px", sm: "30px", md: "40px" },
           fontWeight: "700",
           color: "#1B3C74",
-          fontSize: { xs: "25px", sm: "30px", md: "40px " },
+          fontSize: { xs: "25px", sm: "30px", md: "33px" },
           letterSpacing: "0.1px",
           lineHeight: "67px",
         }}

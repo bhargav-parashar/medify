@@ -5,6 +5,7 @@ import CouponSection from "../../components/Sections/CouponSection.jsx";
 import Specialisations from "../../components/Sections/Specialisations.jsx";
 import Doctors from "../../components/Sections/Doctors.jsx";
 import PatientCare from "../../components/Sections/PatientCare.jsx";
+import News from "../../components/Sections/News.jsx";
 const HomePage = () => {
   return (
     <Box>
@@ -14,6 +15,7 @@ const HomePage = () => {
       <Specialisations/>
       <Doctors/>
       <PatientCare/>
+      <News/>
     </Box>
   );
 };
