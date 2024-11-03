@@ -90,6 +90,7 @@ const PatientCare = () => {
           </Typography>
         </Box>
         <Typography
+          align="justify"
           sx={{ color: "#77829D", margin: "10px 0px", fontSize: "2vw" }}
         >
           Our goal is to deliver quality of care in a courteous, respectful, and
@@ -144,6 +145,7 @@ const PatientCare = () => {
           </Typography>
         </Box>
         <Typography
+          align="justify"
           sx={{ color: "#77829D", margin: "10px 0px", fontSize: "1.5vw" }}
         >
           Our goal is to deliver quality of care in a courteous, respectful, and
@@ -190,7 +192,7 @@ const PatientCare = () => {
             <span style={{ color: "#2AA7FF" }}>Caring!</span>
           </Typography>
         </Box>
-        <Typography sx={{ color: "#77829D", margin: "20px 0px" }}>
+        <Typography align="justify" sx={{ color: "#77829D", margin: "20px 0px" }}>
           Our goal is to deliver quality of care in a courteous, respectful, and
           compassionate manner. We hope you will allow us to care for you and
           strive to be the first and best choice for healthcare.

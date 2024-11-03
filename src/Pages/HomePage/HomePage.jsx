@@ -6,6 +6,8 @@ import Specialisations from "../../components/Sections/Specialisations.jsx";
 import Doctors from "../../components/Sections/Doctors.jsx";
 import PatientCare from "../../components/Sections/PatientCare.jsx";
 import News from "../../components/Sections/News.jsx";
+import Families from "../../components/Sections/Families.jsx";
+
 const HomePage = () => {
   return (
     <Box>
@@ -16,6 +18,7 @@ const HomePage = () => {
       <Doctors/>
       <PatientCare/>
       <News/>
+      <Families/>
     </Box>
   );
 };

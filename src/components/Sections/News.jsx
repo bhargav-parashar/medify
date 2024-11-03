@@ -41,7 +41,7 @@ const News = () => {
       alignItems="center"
       sx={{
         paddingBottom: "40px",
-        height: "500px",
+        
       }}
     >
       <Typography
