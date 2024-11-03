@@ -7,9 +7,9 @@ import CardActionArea from "@mui/material/CardActionArea";
 
 export default function TextCard({id, img,label,selected,handleClick, grid, cardWidth, cardHeight}) {
 
-    const background = id === selected? "rgba(42, 167, 255, 0.08)" : "#FAFBFE" ;
+    const background = id === selected? "rgba(42, 167, 255, 0.08)" : 'secondary.alternateWhite' ;
     const border = id === selected? "1px solid rgba(42, 167, 255, 1)" : "none" ;
-    const fontColor = id === selected?"#2AA7FF":"#ABB6C7";
+    const fontColor = id === selected?'primary.main':'secondary.alternateGray';
 
 
     return (

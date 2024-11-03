@@ -7,10 +7,8 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../../assets/Logo/Logo.svg";
-import styles from "./Header.module.css";
 import Tabs from "./Tabs/Tabs";
 import ButtonPrimary from "../Buttons/ButtonPrimary.jsx";
 
@@ -35,7 +33,18 @@ function ResponsiveAppBar() {
 
   return (
     <>
-      <Box className={styles.topMessage}>
+      <Box sx={{
+        backgroundColor:'primary.main',
+        height: '40px',
+        color: 'secondary.white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'fixed',
+        width:'100%',
+        zIndex: '1000'
+      }}
+      >
         <Typography
           sx={{
             fontSize: { xs: "5.5px", sm: "10px", md: "14px" },
@@ -109,7 +118,7 @@ function ResponsiveAppBar() {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ textAlign: "center", color: "#102851" }}>
+                    <Typography sx={{ textAlign: "center", color: 'primary.dark' }}>
                       {page}
                     </Typography>
                   </MenuItem>

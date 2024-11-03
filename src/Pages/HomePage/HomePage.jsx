@@ -8,6 +8,7 @@ import PatientCare from "../../components/Sections/PatientCare.jsx";
 import News from "../../components/Sections/News.jsx";
 import Families from "../../components/Sections/Families.jsx";
 import Faq from "../../components/Sections/Faq.jsx";
+import DownloadApp from "../../components/Sections/DownloadApp.jsx";
   
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
       <News/>
       <Families/>
       <Faq/>
+      <DownloadApp/>
     </Box>
   );
 };

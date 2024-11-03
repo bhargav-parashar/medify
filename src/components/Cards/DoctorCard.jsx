@@ -16,13 +16,13 @@ const DocCard = ({ data }) => {
         src={data.img}
       />
       <Typography
-        sx={{ color: "#1B3C74", mt: "8px", fontSize: { xs: "1.8vw", sm: "1.5vw" } }}
+        sx={{ color: 'primary.dark', mt: "8px", fontSize: { xs: "1.8vw", sm: "1.5vw" } }}
       >
         {data.name}
       </Typography>
       <Typography
         variant="caption"
-        sx={{ color: "#2AA7FF", mt: "2px", fontSize: { xs: "1.2vw", sm: "1vw" } }}
+        sx={{ color: 'primary.main', mt: "2px", fontSize: { xs: "1.2vw", sm: "1vw" } }}
       >
         {data.dept}
       </Typography>

@@ -20,7 +20,7 @@ const Faq = () => {
           marginTop: { xs: "25px", sm: "30px", md: "40px " },
           marginBottom: "10px",
           fontWeight: "700",
-          color: "#2AA7FF",
+          color: "primary.main",
           fontSize: { xs: "10px", sm: "15px", md: "17px" },
           letterSpacing: "0.1px",
           lineHeight: "20px",
@@ -31,7 +31,7 @@ const Faq = () => {
       <Typography
         sx={{
           fontWeight: "700",
-          color: "#1B3C74",
+          color: "primary.dark",
           fontSize: { xs: "25px", sm: "30px", md: "33px " },
           letterSpacing: "0.1px",
           lineHeight: "40px",
@@ -69,7 +69,7 @@ const Faq = () => {
           <Box
             sx={{
               boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-              background: "#FFFFFF",
+              backgroundColor: "secondary.white",
               height: {xs:'8vw',sm:'4.9vw'},
               width: {xs:'8vw',sm:'4.9vw'},
               borderRadius: "50%",
@@ -94,7 +94,7 @@ const Faq = () => {
           <Box
             sx={{
               boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-              background: "#FFFFFF",
+              backgroundColor: 'secondary.white',
               height: {xs:'7vw',sm:'5vw'},
               width: {xs:'20vw',sm:'13vw'},
               borderRadius: "4px",
@@ -122,7 +122,7 @@ const Faq = () => {
             <Box sx={{ marginRight: "8%" }}>
               <Typography
                 sx={{
-                  color: "#1B3C74",
+                  color: 'primary.dark',
                   fontWeight: "600",
                   letterSpacing: 1,
                   fontSize: {xs:'2vw',sm:'1.3vw'},
@@ -131,7 +131,7 @@ const Faq = () => {
                 84k+
               </Typography>
               <Typography
-                sx={{ color: "#77829D", letterSpacing: 1, fontSize:{xs:'1vw',sm:'0.8vw'},  }}
+                sx={{ color: 'secondary.gray', letterSpacing: 1, fontSize:{xs:'1vw',sm:'0.8vw'},  }}
               >
                 Happy Patients
               </Typography>

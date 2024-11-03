@@ -4,8 +4,7 @@ const Families = () => {
   return (
     <Box
       sx={{
-        background:
-          "linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%)",
+        background:'linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%)',
         paddingBottom: "40px",
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
@@ -16,7 +15,7 @@ const Families = () => {
       }}
     >
 
-         {/* Extra small screen */}
+      {/* Extra small screen */}
       <Box
         sx={{
           display: { xs: "flex", sm: "none" },
@@ -27,7 +26,7 @@ const Families = () => {
         }}
       >
         <Typography
-          sx={{ color: "#2AA7FF", fontWeight: "600", fontSize: "2vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "2vw" }}
         >
           CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.
         </Typography>
@@ -37,24 +36,25 @@ const Families = () => {
               fontWeight: "600",
               fontSize: "4vw",
               letterSpacing: 2,
+              color: 'primary.dark'
             }}
           >
-            <span style={{ color: "#1B3C74" }}>Our Families</span>{" "}
+            Our Families
           </Typography>
         </Box>
         <Typography
           align="justify"
-          sx={{ color: "#77829D", margin: "10px 0px", fontSize: "2vw" }}
+          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "2vw" }}
         >
           We will work with you to develop individualised care plans, including
           management of chronic diseases. If we cannot assist, we can provide
           referrals or advice about the type of practitioner you require. We
           treat all enquiries sensitively and in the strictest confidence.
         </Typography>
-       
-      </Box>
+       </Box>
 
-          {/* small screen */}
+
+      {/* small screen */}
       <Box
         sx={{
           display: { xs: "none", sm: "flex", md: "none" },
@@ -65,7 +65,7 @@ const Families = () => {
         }}
       >
         <Typography
-          sx={{ color: "#2AA7FF", fontWeight: "600", fontSize: "1vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
         >
           CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.
         </Typography>
@@ -75,22 +75,23 @@ const Families = () => {
               fontWeight: "600",
               fontSize: "3.2vw",
               letterSpacing: 2,
+              color: 'primary.dark'
             }}
           >
-            <span style={{ color: "#1B3C74" }}>Our Families</span>{" "}
+            Our Families
           </Typography>
         </Box>
         <Typography
           align="justify"
-          sx={{ color: "#77829D", margin: "10px 0px", fontSize: "1.5vw" }}
+          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "1.5vw" }}
         >
           We will work with you to develop individualised care plans, including
           management of chronic diseases. If we cannot assist, we can provide
           referrals or advice about the type of practitioner you require. We
           treat all enquiries sensitively and in the strictest confidence.
         </Typography>
-            
       </Box>
+
 
       {/* medium+ screen */}
       <Box
@@ -103,7 +104,7 @@ const Families = () => {
         }}
       >
         <Typography
-          sx={{ color: "#2AA7FF", fontWeight: "600", fontSize: "1vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
         >
           CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.
         </Typography>
@@ -113,12 +114,13 @@ const Families = () => {
               fontWeight: "600",
               fontSize: "3vw",
               letterSpacing: 2,
+              color: 'primary.dark'
             }}
           >
-            <span style={{ color: "#1B3C74" }}>Our Families</span>{" "}
+            Our Families
           </Typography>
         </Box>
-        <Typography sx={{ color: "#77829D", margin: "20px 0px" }} align="justify">
+        <Typography sx={{ color: 'secondary.gray', margin: "20px 0px" }} align="justify">
           We will work with you to develop individualised care plans, including
           management of chronic diseases. If we cannot assist, we can provide
           referrals or advice about the type of practitioner you require. We

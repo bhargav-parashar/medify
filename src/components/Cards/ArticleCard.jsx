@@ -30,11 +30,11 @@ export default function ActionAreaCard({ data, cardWidth, cardHeight }) {
         {/* Extra small screens */}
         <CardContent sx={{display:{xs:"block",sm:"none", padding:"0px 10px"}}}>
           <Typography gutterBottom variant="body2" component="div">
-            <span style={{ color: "#77829D", fontSize:"1.2vw" }}>{data.category}</span>{" "}
-            <span style={{ color: "#DDDDDD",fontSize:"1.8vw" }}>|</span>{" "}
-            <span style={{ color: "#77829D",fontSize:"1.2vw" }}>{dateConvertor(data.date)}</span>
+            <span style={{ color: 'secondary.gray', fontSize:"1.2vw" }}>{data.category}</span>{" "}
+            <span style={{ color: 'secondary.lightGray',fontSize:"1.8vw" }}>|</span>{" "}
+            <span style={{ color: 'secondary.gray',fontSize:"1.2vw" }}>{dateConvertor(data.date)}</span>
           </Typography>
-          <Typography variant="body1" sx={{ color: "#1B3C74",fontSize:"1.6vw" }}>
+          <Typography variant="body1" sx={{ color: 'primary.dark',fontSize:"1.6vw" }}>
             {data.title}
           </Typography>
           <Box sx={{display:"flex", alignItems:"center", gap:"3px" }}>
@@ -54,7 +54,7 @@ export default function ActionAreaCard({ data, cardWidth, cardHeight }) {
               gutterBottom
               variant="body2"
               component="div"
-              sx={{ color: "#1B3C74", margin:"10px 0px", fontSize:"1.5vw"}}
+              sx={{ color: 'primary.dark', margin:"10px 0px", fontSize:"1.5vw"}}
             >
               {data.author}
             </Typography>
@@ -64,11 +64,11 @@ export default function ActionAreaCard({ data, cardWidth, cardHeight }) {
         {/* Small screens */}
         <CardContent sx={{display:{xs:"none",sm:"block", md:"none"}}}>
           <Typography gutterBottom variant="body2" component="div">
-            <span style={{ color: "#77829D", fontSize:"1.5vw" }}>{data.category}</span>{" "}
-            <span style={{ color: "#DDDDDD",fontSize:"1.8vw" }}>|</span>{" "}
-            <span style={{ color: "#77829D",fontSize:"1.5vw" }}>{dateConvertor(data.date)}</span>
+            <span style={{ color: 'secondary.gray', fontSize:"1.5vw" }}>{data.category}</span>{" "}
+            <span style={{ color: 'secondary.lightGray',fontSize:"1.8vw" }}>|</span>{" "}
+            <span style={{ color: 'secondary.gray',fontSize:"1.5vw" }}>{dateConvertor(data.date)}</span>
           </Typography>
-          <Typography variant="body1" sx={{ color: "#1B3C74",fontSize:"2vw" }}>
+          <Typography variant="body1" sx={{ color: 'primary.dark',fontSize:"2vw" }}>
             {data.title}
           </Typography>
           <Box sx={{display:"flex", alignItems:"center", gap:"3px" }}>
@@ -88,7 +88,7 @@ export default function ActionAreaCard({ data, cardWidth, cardHeight }) {
               gutterBottom
               variant="body2"
               component="div"
-              sx={{ color: "#1B3C74", margin:"10px 0px", fontSize:"1.5vw"}}
+              sx={{ color: 'primary.dark', margin:"10px 0px", fontSize:"1.5vw"}}
             >
               {data.author}
             </Typography>
@@ -98,11 +98,11 @@ export default function ActionAreaCard({ data, cardWidth, cardHeight }) {
         {/* Medium + screens */}
         <CardContent sx={{display:{xs:"none",md:"block"}}}>
           <Typography gutterBottom variant="body2" component="div">
-            <span style={{ color: "#77829D" }}>{data.category}</span>{" "}
-            <span style={{ color: "#DDDDDD" }}>|</span>{" "}
-            <span style={{ color: "#77829D" }}>{dateConvertor(data.date)}</span>
+            <span style={{ color: 'secondary.gray' }}>{data.category}</span>{" "}
+            <span style={{ color: 'secondary.lightGray' }}>|</span>{" "}
+            <span style={{ color: 'secondary.gray' }}>{dateConvertor(data.date)}</span>
           </Typography>
-          <Typography variant="body1" sx={{ color: "#1B3C74" }}>
+          <Typography variant="body1" sx={{ color: 'primary.dark' }}>
             {data.title}
           </Typography>
           <Box sx={{display:"flex", alignItems:"center", gap:"3px" }}>
@@ -122,7 +122,7 @@ export default function ActionAreaCard({ data, cardWidth, cardHeight }) {
               gutterBottom
               variant="body2"
               component="div"
-              sx={{ color: "#1B3C74", margin:"10px 0px"}}
+              sx={{ color: 'primary.dark', margin:"10px 0px"}}
             >
               {data.author}
             </Typography>

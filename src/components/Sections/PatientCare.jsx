@@ -73,7 +73,7 @@ const PatientCare = () => {
         }}
       >
         <Typography
-          sx={{ color: "#2AA7FF", fontWeight: "600", fontSize: "2vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "2vw" }}
         >
           HELPING PATIENTS FROM AROUND THE GLOBE!!
         </Typography>
@@ -85,13 +85,13 @@ const PatientCare = () => {
               letterSpacing: 2,
             }}
           >
-            <span style={{ color: "#1B3C74" }}>Patient</span>{" "}
-            <span style={{ color: "#2AA7FF" }}>Caring!</span>
+            <Box component='span' sx={{ color: 'primary.dark' }}>Patient</Box>{" "}
+            <Box component='span' sx={{ color: 'primary.main' }}>Caring!</Box>
           </Typography>
         </Box>
         <Typography
           align="justify"
-          sx={{ color: "#77829D", margin: "10px 0px", fontSize: "2vw" }}
+          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "2vw" }}
         >
           Our goal is to deliver quality of care in a courteous, respectful, and
           compassionate manner. We hope you will allow us to care for you and
@@ -128,7 +128,7 @@ const PatientCare = () => {
         }}
       >
         <Typography
-          sx={{ color: "#2AA7FF", fontWeight: "600", fontSize: "1vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
         >
           HELPING PATIENTS FROM AROUND THE GLOBE!!
         </Typography>
@@ -140,13 +140,13 @@ const PatientCare = () => {
               letterSpacing: 2,
             }}
           >
-            <span style={{ color: "#1B3C74" }}>Patient</span>{" "}
-            <span style={{ color: "#2AA7FF" }}>Caring!</span>
+            <Box component='span' sx={{ color: 'primary.dark' }}>Patient</Box>{" "}
+            <Box component='span' sx={{ color: 'primary.main' }}>Caring!</Box>
           </Typography>
         </Box>
         <Typography
           align="justify"
-          sx={{ color: "#77829D", margin: "10px 0px", fontSize: "1.5vw" }}
+          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "1.5vw" }}
         >
           Our goal is to deliver quality of care in a courteous, respectful, and
           compassionate manner. We hope you will allow us to care for you and
@@ -176,7 +176,7 @@ const PatientCare = () => {
         }}
       >
         <Typography
-          sx={{ color: "#2AA7FF", fontWeight: "600", fontSize: "1vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
         >
           HELPING PATIENTS FROM AROUND THE GLOBE!!
         </Typography>
@@ -188,11 +188,11 @@ const PatientCare = () => {
               letterSpacing: 2,
             }}
           >
-            <span style={{ color: "#1B3C74" }}>Patient</span>{" "}
-            <span style={{ color: "#2AA7FF" }}>Caring!</span>
+            <Box component='span' sx={{ color: 'primary.dark' }}>Patient</Box>{" "}
+            <Box component='span' sx={{ color: 'primary.main' }}>Caring!</Box>
           </Typography>
         </Box>
-        <Typography align="justify" sx={{ color: "#77829D", margin: "20px 0px" }}>
+        <Typography align="justify" sx={{ color: 'secondary.gray', margin: "20px 0px" }}>
           Our goal is to deliver quality of care in a courteous, respectful, and
           compassionate manner. We hope you will allow us to care for you and
           strive to be the first and best choice for healthcare.

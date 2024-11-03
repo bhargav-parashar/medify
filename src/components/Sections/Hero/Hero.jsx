@@ -21,7 +21,6 @@ const Hero = () => {
           <Typography
             sx={{
               fontWeight: "bold",
-              color: "#2AA7FF",
               fontSize: { xs: "33px",  md: "45px " },
               letterSpacing: "0.1px",
               lineHeight: { xs: "1.5", md: "1" },
@@ -35,6 +34,7 @@ const Hero = () => {
               fontSize: { xs: "33px",  md: "45px " },
               letterSpacing: "0.1px",
               lineHeight: { xs: "1.5", md: "1" },
+              color: 'primary.main'
             }}
           >
             Centers
@@ -44,7 +44,7 @@ const Hero = () => {
           variant="subtitle1"
           sx={{
             fontWeight: "Light",
-            color: "#5C6169",
+            color: 'secondary.darkGray',
             width: "80% ",
             fontSize: { xs: "10px",  md: "15px " },
             lineHeight: "1.5",

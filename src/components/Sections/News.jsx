@@ -49,7 +49,7 @@ const News = () => {
           marginTop: { xs: "25px", sm: "30px", md: "40px " },
           marginBottom: "10px",
           fontWeight: "700",
-          color: "#2AA7FF",
+          color: 'primary.main',
           fontSize: { xs: "10px", sm: "15px", md: "17px" },
           letterSpacing: "0.1px",
           lineHeight: "20px",
@@ -60,7 +60,7 @@ const News = () => {
       <Typography
         sx={{
           fontWeight: "700",
-          color: "#1B3C74",
+          color: 'primary.dark',
           fontSize: { xs: "25px", sm: "30px", md: "33px " },
           letterSpacing: "0.1px",
           lineHeight: "40px",

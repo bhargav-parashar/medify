@@ -34,7 +34,7 @@ export default function ControlledAccordions({ data }) {
             id={`panel${idx}bh-header`}
             sx={{
               "& .MuiAccordionSummary-expandIconWrapper": {
-                color: "#2AA7FF",
+                color: 'primary.main',
               },
               "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
                 transform: "rotate(45deg)",
@@ -42,10 +42,10 @@ export default function ControlledAccordions({ data }) {
               
             }}
           >
-            <Typography sx={{ color: "#1B3C74", fontSize: {xs:'2.2vw', sm:'1.5vw'} }}>{item.question}</Typography>
+            <Typography sx={{ color: 'primary.dark', fontSize: {xs:'2.2vw', sm:'1.5vw'} }}>{item.question}</Typography>
           </AccordionSummary>
           <AccordionDetails sx={{ padding: "0px 20% 0px 16px" }}>
-            <Typography sx={{ color: "#77829D",fontSize:{xs:'1.8vw', sm:'1.2vw'}  }}>{item.answer}</Typography>
+            <Typography sx={{ color: 'secondary.gray',fontSize:{xs:'1.8vw', sm:'1.2vw'}  }}>{item.answer}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}

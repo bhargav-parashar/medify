@@ -14,14 +14,19 @@ const HeroOverlay = () => {
   };
   return (
     <Box className={styles.heroOverlay}>
+
       {/* extra small screen */}
       <Box sx={{ display: { xs: "block", sm: "none" }, width:"100%" }}>
         <SearchLayout stack />
       </Box>
+
+
       {/* small screen */}
       <Box sx={{ display: { xs: "none", sm: "block", lg: "none" }, width:"100%" }}>
         <SearchLayout searchBoxGap="10px" />
       </Box>
+
+
       {/* Large  screen */}
       <Box sx={{ display: { xs: "none", lg: "block" }, width:"100%" }}>
         <SearchLayout searchBoxGap="10px"/>

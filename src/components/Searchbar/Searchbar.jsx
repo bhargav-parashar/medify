@@ -11,7 +11,7 @@ export default function Searchbar({ placeholder = "Search", width="33%" }) {
       placeholder={placeholder}
       size="small"
       sx={{
-        background: "#FAFBFE",
+        backgroundColor: 'secondary.alternateWhite',
         width: {width},
       }}
       slotProps={{
