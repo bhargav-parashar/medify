@@ -16,39 +16,41 @@ const Contact = () => {
         flexDirection: { xs: "column", sm: "row" },
         gap: "4.5vw",
         justifyContent: "center",
-        alignItems: "flex-start",
+        alignItems: {xs:'center',sm:'flex-start'},
         padding: { xs: "40px 6vw", sm: "40px 6vw 0px 0px" },
       }}
     >
       <Box
         component="img"
         sx={{
-          height: { xs: "50vw", sm: "30vw" },
-          width: { xs: "50vw", sm: "30vw" },
-          border: "2px solid green",
+          height: { xs: "65vw", sm: "30vw" },
+          width: { xs: "65vw", sm: "30vw" },
+          //border: "2px solid green"
+          
         }}
         alt="patient-stats"
         src={image}
       />
 
-    
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          border: "2px solid red",
-          width: "42%",
+          //border: "2px solid red",
+          width: {xs:'60vw', sm:'42%'},
           margin: "3vw 0px",
+          position:'relative'
         }}
       >
         <Box>
           <Typography
             sx={{
               fontWeight: "600",
-              fontSize: "3vw",
+              fontSize:{xs:'5vw',sm:'3vw'},
               letterSpacing: 2,
               color: "primary.dark",
+              lineHeight: {xs:'20px',sm:'25px'}
             }}
           >
             Download the
@@ -56,7 +58,7 @@ const Contact = () => {
           <Typography
             sx={{
               fontWeight: "600",
-              fontSize: "3vw",
+              fontSize: {xs:'5vw',sm:'3vw'},
               letterSpacing: 2,
             }}
           >
@@ -85,6 +87,8 @@ const Contact = () => {
             gap: [2],
             flexDirection: { xs: "column", sm: "row" },
             alignItems: "center",
+            width:'100%',
+            mt:{xs:1,sm:1}
           }}
         >
           <TextField
@@ -95,7 +99,7 @@ const Contact = () => {
               "& .MuiOutlinedInput-input": {
                 fontSize: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
               },
-              width:"24vw"
+              width:{xs:'100%',sm:'24vw'} ,
             }}
             size="small"
             placeholder="Enter phone number"
@@ -121,39 +125,47 @@ const Contact = () => {
             label="Send SMS"
             type="submit"
             variant="contained"
-            width={99}
+            width={{xs:'100%',sm:'fit-content'}} 
             //height={30}
+            
             fontSize={{ xs: "2vw", sm: "1.5vw", md: "1.1vw" }}
-            padding={{ xs: "11px 0px", sm: "11px 0px", md: "15px 0px" }}
+            padding={{ xs: "11px 0px", sm: "11px 0px", md: "16px 10px" }}
             disableElevation
           >
             Send SMS
           </Button>
         </Box>
-        <Box sx={{ display: "flex", marginTop:{xs:'2.5vw', sm:'2.5vw',md:'5vw'}, gap:'25px' }}>
+        <Box
+          sx={{
+            display: "flex",
+            marginTop: { xs: "2.5vw", sm: "2.5vw", md: "3vw" },
+            gap: { xs: "1.2vw", sm: "1.8vw", md: "2vw" },
+            flexDirection:{xs:'column',sm:'row'},
+            width:'100%'
+          }}
+        >
           <Button
             label="Google Play"
-            bckColor='#333'
+            bckColor="#333"
             icon={
               <Box
                 component="img"
                 sx={{
-                  height: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
+                  height: { xs: "2vw", sm: "1.5vw", md: "1.vw" },
                   width: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
                 }}
                 src={Playstore}
                 alt="apple-logo"
-               
               />
             }
-            width='fit-content'
-            height='fit-content'
-            fontSize={{ xs: "2vw", sm: "1.7vw"}}
-            padding={{ xs: "11px", sm: "6px 15px"}}
+            width={{xs:'100%',sm:"fit-content"}}
+            height="fit-content"
+            fontSize={{ xs: "2vw", sm: "1.7vw" }}
+            padding={{ xs: "11px", sm: "9px 15px" }}
           />
           <Button
             label="App Store"
-            bckColor='#333'
+            bckColor="#333"
             icon={
               <Box
                 component="img"
@@ -165,13 +177,28 @@ const Contact = () => {
                 alt="playstore-logo"
               />
             }
-            width='fit-content'
-            height='fit-content'
-            fontSize={{ xs: "2vw", sm: "1.7vw"}}
-            padding={{ xs: "11px", sm: "6px 15px"}}
+            width={{xs:'100%',sm:"fit-content"}}
+            height="fit-content"
+            fontSize={{ xs: "2vw", sm: "1.7vw" }}
+            padding={{ xs: "11px", sm: "9px 15px" }}
             disableElevation
           />
         </Box>
+        
+        <Box
+          component="img"
+          src={arrow}
+          alt='arrow'
+          sx={{
+          height: { xs: "10vw", sm: "6vw" },
+          width: { xs: "8vw", sm: "4vw" },
+          //border: "2px solid green",
+          transform: 'rotate(10deg)',
+          position:'absolute',
+          left:'-11%',
+          top:'8%'
+          }}
+        />
       </Box>
     </Box>
   );
