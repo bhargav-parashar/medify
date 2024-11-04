@@ -142,7 +142,7 @@ const Footer = () => {
           }}
         >
           {linkSet1.map((item) => (
-            <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none', fontSize:{xs:'1.5vw',md:'1vw'}}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1vw'}}}/>{item.title}</Box></Link>
+            <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none', fontSize:{xs:'1.5vw',md:'1vw'}}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1.5vw'}}}/>{item.title}</Box></Link>
           ))}
         </Box>
         <Box
@@ -157,7 +157,7 @@ const Footer = () => {
           }}
         >
           {linkSet2.map((item) => (
-             <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none',fontSize:{xs:'1.5vw',md:'1vw'}}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1vw'}}}/>{item.title}</Box></Link>
+             <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none',fontSize:{xs:'1.5vw',md:'1vw'}}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1.5vw'}}}/>{item.title}</Box></Link>
           ))}
         </Box>
         <Box
@@ -172,7 +172,7 @@ const Footer = () => {
           }}
         >
           {linkSet1.map((item) => (
-            <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none',fontSize:'1vw'}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon />{item.title}</Box></Link>
+            <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none',fontSize:'1vw'}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1.5vw'}}} />{item.title}</Box></Link>
           ))}
         </Box>
       </Box>
