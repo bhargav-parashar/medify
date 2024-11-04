@@ -1,7 +1,62 @@
 import { Box, Typography } from "@mui/material";
 import Carousel from "../Carousel/Carousel";
-import cards from "../../data/doctors.json";
 import DocCard from "../Cards/DoctorCard";
+import doctorHeena from "../../assets/Images/doctor-heena.png"
+import doctorAnkur from "../../assets/Images/doctor-ankur.png"
+import doctorAhmad from "../../assets/Images/doctor-ahmad.png"
+import doctorStevens from "../../assets/Images/doctor-ahmad-stevens.png";
+import doctorLesley from "../../assets/Images/doctor-lesley.png";
+
+const cards = [
+  {
+      id:"1",
+      name:"Dr Heena Sachdeva",
+      dept:"Orthopedics",
+      img:doctorHeena  
+  },
+  {
+      id:"2",
+      name:"Dr Ankur Sharma",
+      dept:"Medicine",
+      img:doctorAnkur  
+  },
+  {
+      id:"3",
+      name:"Dr Ahmad Stevens",
+      dept:"Neurologist",
+      img:doctorStevens  
+  } ,
+  {
+      id:4,
+      name:"Dr Lesley Hull",
+      dept:"Medicine",
+      img:doctorLesley  
+  },
+  {
+      id:5,
+      name:"Dr Ahmad Khan",
+      dept:"Neurologist",
+      img:doctorAhmad  
+  },
+  {
+      id:6,
+      name:"Dr Heena Sachdeva",
+      dept:"Orthopedics",
+      img:doctorHeena
+  },
+  {
+      id:7,
+      name:"Dr Lesley Hull",
+      dept:"Medicine",
+      img:doctorLesley  
+  },
+  {
+      id:8,
+      name:"Dr Ahmad Khan",
+      dept:"Neurologist",
+      img:doctorAhmad  
+  }  
+];
 
 const Doctors = () => {
   return (
@@ -26,19 +81,25 @@ const Doctors = () => {
         Our Medical Specialists
       </Typography>
       </Box>
-      {/* Extra small screen */}
+
+      {/* Medium screen */}
       <Box sx={{mt:"20px", display:{xs:"none",md:"block"} }}>
         <Carousel slidesPerView={4}  spaceBetween={40} data={cards.map((slide) => <DocCard data={slide} /> )} />
       </Box>
+
+      
       {/* Small screen */}
       <Box sx={{mt:"20px", display:{xs:"none",sm:"block",md:"none"} }}>
         <Carousel slidesPerView={3}  spaceBetween={30} data={cards.map((slide) => <DocCard data={slide} /> )} />
       </Box>
-       {/* Medium+ screen */}
+
+
+       {/* Extra small screen */}
       <Box sx={{mt:"20px", display:{xs:"block",sm:"none"} }}>
         <Carousel slidesPerView={2}  spaceBetween={10} data={cards.map((slide) => <DocCard data={slide} /> )} />
       </Box>
-    </Box>
+
+     </Box>
   );
 
   

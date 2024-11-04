@@ -3,9 +3,57 @@ import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import TextCard from "../Cards/TextCard.jsx";
 import Button from "../../components/Buttons/ButtonPrimary.jsx";
-import cards from "../../data/specialisationCards.json";
+import labCard from "../../assets/Images/drugstore-card.png";
+import primaryCare from "../../assets/Images/primary-care.png";
+import cardiology from "../../assets/Images/cardiology.png";
+import mri from "../../assets/Images/mri.png";
+import testTube from "../../assets/Images/test-tube.png";
+import shield from "../../assets/Images/shield.png";
+import xRay from "../../assets/Images/x-ray.png";
 
- 
+const cards =[
+  {
+    id: 1,
+    img: labCard,
+    label: "Dentistry"
+  },
+  {
+    id: 2,
+    img: primaryCare,
+    label: "Primary care"
+  },
+  {
+    id: 3,
+    img: cardiology,
+    label: "Cardiology"
+  },
+  {
+    id: 4,
+    img: mri,
+    label: "MRI Resonance"
+  },
+  {
+    id: 5,
+    img: testTube,
+    label: "Blood Test"
+  },
+  {
+    id: 6,
+    img: shield,
+    label: "Psychology"
+  },
+  {
+    id: 7,
+    img: labCard,
+    label: "Laboratory"
+  },
+  {
+    id: 8,
+    img: xRay,
+    label: "X-Ray"
+  }
+];
+
 const Specialisations = () => {
   const [selectedCard, setSelectedCard] = useState(1);
   const handleClick = (id) => {

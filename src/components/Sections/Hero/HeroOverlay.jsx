@@ -4,8 +4,39 @@ import Grid from "@mui/material/Grid2";
 import { Box, Typography } from "@mui/material";
 import SearchLayout from "../../Searchbar/SearchLayout.jsx";
 import TextCard from "../../Cards/TextCard.jsx";
-import cards from "../../../data/serviceCards.json";
+import doctorCard from "../../../assets/Images/doctor-card.png";
+import labCard from "../../../assets/Images/drugstore-card.png";
+import hospitalCard from "../../../assets/Images/hospital-card.png";
+import capsuleCard from "../../../assets/Images/capsule-card.png";
+import ambulanceCard from "../../../assets/Images/ambulance-card.png";
 
+const cards = [
+  {
+      id: 1,
+      image: doctorCard,
+      label: "Doctors"
+  },
+  {
+      id: 2,
+      image: labCard,
+      label: "Labs"
+  },
+  {
+      id: 3,
+      image: hospitalCard,
+      label: "Hospitals"
+  },
+  {
+      id: 4,
+      image:capsuleCard,
+      label: "Medical store"
+  },
+  {
+      id: 5,
+      image: ambulanceCard,
+      label: "Ambulance"
+  }
+];
 
 const HeroOverlay = () => {
   const [selectedCard, setSelectedCard] = useState(3);

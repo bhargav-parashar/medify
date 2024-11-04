@@ -77,7 +77,7 @@ const Faq = () => {
               justifyContent: "center",
               alignItems: "center",
               position: "absolute",
-              zIndex: 1000,
+              zIndex: 2,
               top: "30%",
               right: "3%",
             }}
@@ -102,7 +102,7 @@ const Faq = () => {
               justifyContent: "center",
               alignItems: "center",
               position: "absolute",
-              zIndex: 1000,
+              zIndex: 2,
               bottom: "30%",
               left: "-12%",
               gap: "1vw",

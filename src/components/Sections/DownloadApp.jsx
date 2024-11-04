@@ -151,8 +151,8 @@ const Contact = () => {
               <Box
                 component="img"
                 sx={{
-                  height: { xs: "2vw", sm: "1.5vw", md: "1.vw" },
-                  width: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
+                  height: { xs: "3vw", sm: "2vw" },
+                  width: { xs: "3vw", sm: "2vw" },
                 }}
                 src={Playstore}
                 alt="apple-logo"
@@ -170,8 +170,8 @@ const Contact = () => {
               <Box
                 component="img"
                 sx={{
-                  height: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
-                  width: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
+                  height: { xs: "3vw", sm: "2vw" },
+                  width: { xs: "3vw", sm: "2vw" },
                 }}
                 src={Apple}
                 alt="playstore-logo"

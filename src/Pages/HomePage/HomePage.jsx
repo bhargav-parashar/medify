@@ -9,6 +9,7 @@ import News from "../../components/Sections/News.jsx";
 import Families from "../../components/Sections/Families.jsx";
 import Faq from "../../components/Sections/Faq.jsx";
 import DownloadApp from "../../components/Sections/DownloadApp.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
   
 const HomePage = () => {
   return (
@@ -23,6 +24,7 @@ const HomePage = () => {
       <Families/>
       <Faq/>
       <DownloadApp/>
+      <Footer/>
     </Box>
   );
 };

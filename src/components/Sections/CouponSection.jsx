@@ -1,7 +1,27 @@
 import react from "react";
 import { Box } from "@mui/material";
 import Carousel from "../Carousel/Carousel.jsx";
-import couponSlides from "../../data/couponCards.json";
+import Coupon1 from "../../assets/Images/offer1.png";
+import Coupon2 from "../../assets/Images/offer2.png";
+
+const couponSlides = [
+  {
+    id: 1,
+    img:Coupon1
+  },
+  {
+    id: 2,
+    img: Coupon2
+  },
+  {
+    id: 3,
+    img: Coupon1
+  },
+  {
+    id: 4,
+    img: Coupon2
+  }
+];
 
 const CouponSection = () => {
   return (
