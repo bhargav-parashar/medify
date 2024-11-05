@@ -5,7 +5,7 @@ import Fb from "../../assets/Logo/fb.svg";
 import Twitter from "../../assets/Logo/twitter.svg";
 import Youtube from "../../assets/Logo/youtube.svg";
 import Pinterest from "../../assets/Logo/pinterest.svg";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const socialMedia = [
   {
@@ -83,16 +83,23 @@ const Footer = () => {
         //height: "250px",
         backgroundColor: "primary.dark",
         padding: "5% 10%",
-        
       }}
     >
-      <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection:{xs:'column',md:'row'},marginBottom:'40px' }}>
+      <Box
+        sx={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          marginBottom: "40px",
+        }}
+      >
         <Box
           sx={{
             //border: "2px solid white",
             position: "relative",
             display: "flex",
-            height: {xs:'100px',md:'213px'},
+            height: { xs: "100px", md: "213px" },
             width: "40%",
           }}
         >
@@ -101,10 +108,11 @@ const Footer = () => {
             src={Logo}
             alt="medify-logo"
             sx={{
-              height:{xs:'4vw',md:'2.5vw'},
+              height: { xs: "8vw", sm: "4vw", md: "2.5vw" },
               position: "absolute",
               left: "3%",
               top: "8%",
+              cursor: "pointer",
             }}
           />
           <Box
@@ -123,26 +131,41 @@ const Footer = () => {
                 src={item.logo}
                 alt={item.title}
                 sx={{
-                  height:{xs:'4vw',md:'2.5vw'},
-                 
+                  height: { xs: "6vw", sm: "4vw", md: "2.5vw" },
+                  cursor: "pointer",
                 }}
+                
               />
             ))}
           </Box>
         </Box>
         <Box
           sx={{
-           // border: "2px solid white",
+            // border: "2px solid white",
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-evenly",
-            height: '213px',
-            width: "20%",
+            justifyContent: "space-around",
+            height: "213px",
+            width: { xs: "80%", sm: "20%" },
           }}
         >
           {linkSet1.map((item) => (
-            <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none', fontSize:{xs:'1.5vw',md:'1vw'}}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1.5vw'}}}/>{item.title}</Box></Link>
+            <Link
+              sx={{
+                cursor: "pointer",
+                color: "secondary.white",
+                textDecoration: "none",
+                fontSize: { xs: "2vw", sm: "1.5vw", md: "1vw" },
+                ":hover": {color: 'primary.main'}
+                
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <ChevronRightIcon sx={{ height: { xs: "3vw", md: "1.5vw" } }} />
+                {item.title}
+              </Box>
+            </Link>
           ))}
         </Box>
         <Box
@@ -151,36 +174,65 @@ const Footer = () => {
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-evenly",
-            height: '213px',
-            width: "20%",
+            justifyContent: "space-around",
+            height: "213px",
+            width: { xs: "80%", sm: "20%" },
           }}
         >
           {linkSet2.map((item) => (
-             <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none',fontSize:{xs:'1.5vw',md:'1vw'}}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1.5vw'}}}/>{item.title}</Box></Link>
+            <Link
+              sx={{
+                cursor: "pointer",
+                color: "secondary.white",
+                textDecoration: "none",
+                fontSize: { xs: "2vw", sm: "1.5vw", md: "1vw" },
+                ":hover": {color: 'primary.main'}
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <ChevronRightIcon sx={{ height: { xs: "3vw", md: "1.5vw" } }} />
+                {item.title}
+              </Box>
+            </Link>
           ))}
         </Box>
         <Box
           sx={{
             //border: "2px solid white",
             position: "relative",
-            display: {xs:'none',md:'flex'},
+            display: { xs: "none", md: "flex" },
             flexDirection: "column",
-            justifyContent: "space-evenly",
-            height: '213px',
+            justifyContent: "space-around",
+            height: "213px",
             width: "20%",
           }}
         >
           {linkSet1.map((item) => (
-            <Link sx={{cursor:'pointer', color:'secondary.white',textDecoration: 'none',fontSize:'1vw'}}><Box sx={{display:'flex',alignItems:'center'}}><ChevronRightIcon sx={{height:{xs:'3vw',md:'1.5vw'}}} />{item.title}</Box></Link>
+            <Link
+              sx={{
+                cursor: "pointer",
+                color: "secondary.white",
+                textDecoration: "none",
+                fontSize: "1vw",
+                ":hover": {color: 'primary.main'}
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <ChevronRightIcon sx={{ height: { xs: "3vw", md: "1.5vw" } }} />
+                {item.title}
+              </Box>
+            </Link>
           ))}
         </Box>
       </Box>
-      <Box sx={{ borderTop: "1px solid gray", paddingTop: "20px"}}>
+      <Box sx={{ borderTop: "1px solid gray", paddingTop: "20px" }}>
         <Typography
           variant="caption"
           letterSpacing={1}
-          sx={{ color: "secondary.white" }}
+          sx={{
+            color: "secondary.white",
+            fontSize: { xs: "2vw", sm: "1.5vw", md: "1vw" },
+          }}
         >
           Copyright ©2024 Bhargav Nursing Home.com. All Rights Reserved.
         </Typography>
