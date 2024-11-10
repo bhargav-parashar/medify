@@ -1,10 +1,9 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function Searchbar({ placeholder = "Search", width="33%" }) {
+export default function Searchbar({ placeholder = "Search" }) {
   return (
     <TextField
       id="input-with-icon-textfield"
@@ -12,7 +11,7 @@ export default function Searchbar({ placeholder = "Search", width="33%" }) {
       size="small"
       sx={{
         backgroundColor: 'secondary.alternateWhite',
-        width: {width},
+        width: {xs : "100%",sm: "80%"},
       }}
       slotProps={{
         input: {

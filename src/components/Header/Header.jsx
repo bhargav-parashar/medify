@@ -11,18 +11,12 @@ import MenuItem from "@mui/material/MenuItem";
 import Logo from "../../assets/Logo/Logo.svg";
 import Tabs from "./Tabs/Tabs";
 import ButtonPrimary from "../Buttons/ButtonPrimary.jsx";
+import { Link,useNavigate } from "react-router-dom";
 
-const pages = [
-  "Find Doctors",
-  "Hospitals",
-  "Medicines",
-  "Surgeries",
-  "Software for Provider",
-  "Facilities",
-];
-function ResponsiveAppBar() {
+
+function ResponsiveAppBar({ detailsPage, bookingsPage }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-
+  const nav = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -31,19 +25,30 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  const backgroundCol = detailsPage
+    ? "white"
+    : "linear-gradient(81deg, rgba(231,240,255,1) , rgba(232, 241, 255,1)  )";
+
+  const [selectedTab, setSelecteTab] = React.useState(0);
+  const handleClick = (id) => {
+    console.log(id);
+    setSelecteTab(id);
+  };
+ 
   return (
     <>
-      <Box sx={{
-        backgroundColor:'primary.main',
-        height: '40px',
-        color: 'secondary.white',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'fixed',
-        width:'100%',
-        zIndex: '1000'
-      }}
+      <Box
+        sx={{
+          backgroundColor: "primary.main",
+          height: "40px",
+          color: "secondary.white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "fixed",
+          width: "100%",
+          zIndex: "1000",
+        }}
       >
         <Typography
           sx={{
@@ -60,13 +65,10 @@ function ResponsiveAppBar() {
         <Container
           maxWidth="xl"
           sx={{
-            display: "flex",
-            justifyContent: "center",
             position: "fixed",
             top: "40px",
             zIndex: "1000",
-            background: 'linear-gradient(81deg, rgba(231,240,255,1) , rgba(232, 241, 255,1)  )'
-          
+            background: backgroundCol,
           }}
         >
           <Toolbar
@@ -75,19 +77,40 @@ function ResponsiveAppBar() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: { xs: "100%", lg: "82%" },
+              width: { xs: "100%", lg: "90%" },
             }}
           >
+            <Link to="/">
+              <Box
+                component="img"
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                  mr: 1,
+                  width: "82px",
+                }}
+                alt="medify-logo"
+                src={Logo}
+                onClick={() => handleClick(0)}
+              />
+            </Link>
+
             <Box
-              component="img"
               sx={{
-                display: { xs: "none", md: "flex" },
-                mr: 1,
-                width: "82px",
+                width: { md: "85%", lg: "75%" },
+                display: {
+                  xs: "none",
+                  md: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                },
               }}
-              alt="medify-logo"
-              src={Logo}
-            />
+            >
+              <Tabs handleClick={handleClick} selectedTab={selectedTab} />
+            
+              <Link to="/my-bookings">
+               <ButtonPrimary label="My Bookings" margin="0px 0px 0px 20px" handleclick={()=>handleClick(7)} />
+              </Link>
+            </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -116,17 +139,64 @@ function ResponsiveAppBar() {
                 onClose={handleCloseNavMenu}
                 sx={{ display: { xs: "block", md: "none" } }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ textAlign: "center", color: 'primary.dark' }}>
-                      {page}
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ textAlign: "center", color: "primary.dark" }}
+                  >
+                    Find Doctors
+                  </Typography>
+                </MenuItem>
+
+                <Link to="/search" style={{ textDecoration: "none" }}>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography
+                      sx={{ textAlign: "center", color: "primary.dark" }}
+                    >
+                      Hospitals
                     </Typography>
                   </MenuItem>
-                ))}
+                </Link>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ textAlign: "center", color: "primary.dark" }}
+                  >
+                    Medicines
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ textAlign: "center", color: "primary.dark" }}
+                  >
+                    Surgeries
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ textAlign: "center", color: "primary.dark" }}
+                  >
+                    Software for Provider
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ textAlign: "center", color: "primary.dark" }}
+                  >
+                    Facilities
+                  </Typography>
+                </MenuItem>
+                <Link to="/my-bookings" style={{ textDecoration: "none" }}>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography
+                      sx={{ textAlign: "center", color: "primary.dark" }}
+                    >
+                      My Bookings
+                    </Typography>
+                  </MenuItem>
+                </Link>
               </Menu>
             </Box>
 
-            <Box
+            <Link to="/" ><Box
               component="img"
               sx={{
                 display: { xs: "flex", md: "none" },
@@ -135,25 +205,22 @@ function ResponsiveAppBar() {
               }}
               alt="medify-logo"
               src={Logo}
-            />
-
-            <Box
-              sx={{
-                width: { md: "85%", lg: "75%" },
-                display: {
-                  xs: "none",
-                  md: "flex",
-                  justifyContent: "space-around",
-                  alignItems: "center",
-                },
-              }}
-            >
-              <Tabs pages={pages} />
-            <ButtonPrimary label="My Bookings" margin="0px 0px 0px 20px"/>
-            </Box>
+            /></Link>
           </Toolbar>
         </Container>
       </AppBar>
+      <Box
+        sx={{
+          display: detailsPage ? "block" : "none",
+          backgroundColor: "primary.main",
+          height: { xs: "8vw", sm: "5.2vw", md: "4.5vw" },
+          width: "100%",
+          position: "fixed",
+          top: "17%",
+          zIndex: "1000",
+          borderRadius: "0px 0px 10px 10px",
+        }}
+      ></Box>
     </>
   );
 }

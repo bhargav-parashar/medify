@@ -139,53 +139,21 @@ const Faq = () => {
           </Box>
         </Box>
 
-        {/* extra small screen */}
         <Box
           sx={{
             height: { xs: "50vw", sm: "35vw" },
             width: { xs: "65vw", sm: "50vw" },
-            display: { xs: "block", sm: "none" },
+            display:"flex",
             flexDirection: "column",
             alignItems: "flex-start",
             boxSizing: "border-box",
-            padding: "0px 0px",
+            padding:{xs:"0px 0px",md:"2vw 0px"} ,
             //border: "2px solid red",
           }}
         >
           <Accordion data={faqData} />
         </Box>
 
-        {/* small screen */}
-        <Box
-          sx={{
-            height: { xs: "50vw", sm: "35vw" },
-            width: { xs: "80vw", sm: "50vw" },
-           display: { xs: "none", sm: "flex", md: "none" },
-            flexDirection: "column",
-            alignItems: "flex-start",
-            boxSizing: "border-box",
-            padding: "0px 0px",
-            //border: "2px solid red",
-          }}
-        >
-          <Accordion data={faqData} />
-        </Box>
-
-        {/* medium+ screen */}
-        <Box
-          sx={{
-            height: { xs: "50vw", sm: "35vw" },
-            width: { xs: "80vw", sm: "50vw" },
-            display: { xs: "none", md: "flex" },
-            flexDirection: "column",
-            alignItems: "flex-start",
-            boxSizing: "border-box",
-            padding: "2vw 0px",
-            //border: "2px solid red",
-          }}
-        >
-          <Accordion data={faqData} />
-        </Box>
       </Box>
     </Box>
   );

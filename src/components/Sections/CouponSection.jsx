@@ -1,4 +1,3 @@
-import react from "react";
 import { Box } from "@mui/material";
 import Carousel from "../Carousel/Carousel.jsx";
 import Coupon1 from "../../assets/Images/offer1.png";
@@ -26,13 +25,14 @@ const couponSlides = [
 const CouponSection = () => {
   return (
     <>
-      {/* Extra Small screen*/}
+
+      {/* 1 Slide per view*/}
       <Box
         sx={{
           height: "fit-content",
           width: "100%",
-          marginTop: "90px",
-          display: { xs: "block", sm: "none" },
+          marginTop: {xs:"90px",sm:"85px",md:"140px"},
+          display:{sm:"none"}
         }}
       >
         <Carousel
@@ -40,84 +40,47 @@ const CouponSection = () => {
           slidesPerView={1}
           data={
             couponSlides.map((slide) => (
-            <img
-              src={slide.img}
-              alt={` ${slide.id}`}
-              width="270px"
-              style={{ marginBottom: "50px" }}
-            />
+              <Box
+                component="img"
+                src={slide.img}
+                alt={` ${slide.id}`}
+                width={{xs:"270px",sm:"100%",}}
+                style={{ marginBottom: "50px" }}
+                
+              />
+           
           ))
         }
         />
       </Box>
-
-      {/* Small screen*/}
-      <Box
+      
+       {/* 3 Slides per view*/}
+       <Box
         sx={{
           height: "fit-content",
           width: "100%",
-          marginTop: "85px",
-          display: { xs: "none", sm: "block", md: "none" },
-          //border:"2px solid red"
+          marginTop: {xs:"90px",sm:"85px",md:"140px"},
+          display:{xs:"none",sm:"block"}
         }}
       >
-        <Carousel slidesPerView={3} 
-          data={couponSlides.map((slide) => (
-            <img
-              key={slide.id}
-              src={slide.img}
-              alt={` ${slide.id}`}
-              width="100%"
-              style={{ marginBottom: "50px" }}
-            />
-          ))}
-          />
-      </Box>
-
-      {/* Medium screen*/}
-      <Box
-        sx={{
-          height: "fit-content",
-          width: "100%",
-          marginTop: "140px",
-          display: { xs: "none", md: "block", lg: "none" },
-        }}
-      >
-       
-
-        <Carousel slidesPerView={3}
-          data={couponSlides.map((slide) => (
-            <img
-              src={slide.img}
-              alt={` ${slide.id}`}
-              width="100%"
-              style={{ marginBottom: "50px" }}
-            />
-          ))}
+        <Carousel
+          
+          slidesPerView={3}
+          data={
+            couponSlides.map((slide) => (
+              <Box
+                component="img"
+                src={slide.img}
+                alt={` ${slide.id}`}
+                width={{xs:"270px",sm:"100%",}}
+                style={{ marginBottom: "50px" }}
+              />
+           
+          ))
+        }
         />
       </Box>
-
-      {/* Large screen*/}
-      <Box
-        sx={{
-          height: "fit-content",
-          width: "100%",
-          marginTop: "140px",
-          display: { xs: "none", lg: "block" },
-          //border:"2px solid magenta"
-        }}
-      >
-        <Carousel slidesPerView={3}
-          data={couponSlides.map((slide) => (
-            <img
-              src={slide.img}
-              alt={` ${slide.id}`}
-              width="100%"
-              style={{ marginBottom: "50px" }}
-            />
-          ))}/>
-       
-      </Box>
+     
     </>
   );
 };

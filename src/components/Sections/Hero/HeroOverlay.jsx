@@ -12,30 +12,30 @@ import ambulanceCard from "../../../assets/Images/ambulance-card.png";
 
 const cards = [
   {
-      id: 1,
-      image: doctorCard,
-      label: "Doctors"
+    id: 1,
+    image: doctorCard,
+    label: "Doctors",
   },
   {
-      id: 2,
-      image: labCard,
-      label: "Labs"
+    id: 2,
+    image: labCard,
+    label: "Labs",
   },
   {
-      id: 3,
-      image: hospitalCard,
-      label: "Hospitals"
+    id: 3,
+    image: hospitalCard,
+    label: "Hospitals",
   },
   {
-      id: 4,
-      image:capsuleCard,
-      label: "Medical store"
+    id: 4,
+    image: capsuleCard,
+    label: "Medical store",
   },
   {
-      id: 5,
-      image: ambulanceCard,
-      label: "Ambulance"
-  }
+    id: 5,
+    image: ambulanceCard,
+    label: "Ambulance",
+  },
 ];
 
 const HeroOverlay = () => {
@@ -45,25 +45,8 @@ const HeroOverlay = () => {
   };
   return (
     <Box className={styles.heroOverlay}>
-
-      {/* extra small screen */}
-      <Box sx={{ display: { xs: "block", sm: "none" }, width:"100%" }}>
-        <SearchLayout stack />
-      </Box>
-
-
-      {/* small screen */}
-      <Box sx={{ display: { xs: "none", sm: "block", lg: "none" }, width:"100%" }}>
-        <SearchLayout searchBoxGap="10px" />
-      </Box>
-
-
-      {/* Large  screen */}
-      <Box sx={{ display: { xs: "none", lg: "block" }, width:"100%" }}>
-        <SearchLayout searchBoxGap="10px"/>
-      </Box>
-
-      <Typography
+      <SearchLayout />
+    <Typography
         variant="subtitle1"
         sx={{
           color: "#102851",
@@ -76,39 +59,42 @@ const HeroOverlay = () => {
       >
         You maybe looking for
       </Typography>
-   
+
       <Box
-      sx={{
-        //border: "2px solid green",
-        margin: {xs:"10px 20px 20px 20px",sm:"5px 20px 20px 20px", md:"10px 20px 20px 20px"},
-        width:{xs:"81%", md:"95%"},
-        height:"40%"
-      }}
+        sx={{
+          //border: "2px solid green",
+          margin: {
+            xs: "10px 20px 20px 20px",
+            sm: "5px 20px 20px 20px",
+            md: "10px 20px 20px 20px",
+          },
+          width: { xs: "81%", md: "95%" },
+          height: "40%",
+        }}
       >
-     
-      <Grid
-        container
-        rowSpacing={{ xs: 1, md: 2 }}
-        columnSpacing={{ xs: 1, md: 2 }}
-        justifyContent={"center"}
-        height="100%"
-      >
-        {cards.map((card) => (
-          <Grid item key={card.title} size={{ xs:4,  md:2.4}}>
-            <TextCard
-              key={card.id}
-              id={card.id}
-              img={card.image}
-              label={card.label}
-              cardHeight="100%"
-              cardWidth="100%"
-              selected={selectedCard}
-              handleClick={handleClick}
-            />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+        <Grid
+          container
+          rowSpacing={{ xs: 1, md: 2 }}
+          columnSpacing={{ xs: 1, md: 2 }}
+          justifyContent={"center"}
+          height="100%"
+        >
+          {cards.map((card) => (
+            <Grid item key={card.title} size={{ xs: 4, md: 2.4 }}>
+              <TextCard
+                key={card.id}
+                id={card.id}
+                img={card.image}
+                label={card.label}
+                cardHeight="100%"
+                cardWidth="100%"
+                selected={selectedCard}
+                handleClick={handleClick}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 };

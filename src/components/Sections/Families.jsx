@@ -15,18 +15,17 @@ const Families = () => {
       }}
     >
 
-      {/* Extra small screen */}
       <Box
         sx={{
-          display: { xs: "flex", sm: "none" },
+          display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
           //border: "2px solid red",
-          width: "90%",
+          width:{xs:"90%",sm:"38%",md:"42%"}
         }}
       >
         <Typography
-          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "2vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize:{xs:"2vw",sm:"1vw"} }}
         >
           CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.
         </Typography>
@@ -34,7 +33,7 @@ const Families = () => {
           <Typography
             sx={{
               fontWeight: "600",
-              fontSize: "4vw",
+              fontSize:{xs:"4vw",sm:"3.2vw",md:"3vw"},
               letterSpacing: 2,
               color: 'primary.dark'
             }}
@@ -44,7 +43,7 @@ const Families = () => {
         </Box>
         <Typography
           align="justify"
-          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "2vw" }}
+          sx={{ color: 'secondary.gray', margin:{xs:"10px 0px",md:"20px 0px"} , fontSize: {xs:"2vw",sm:"1.5vw"}}}
         >
           We will work with you to develop individualised care plans, including
           management of chronic diseases. If we cannot assist, we can provide
@@ -52,81 +51,6 @@ const Families = () => {
           treat all enquiries sensitively and in the strictest confidence.
         </Typography>
        </Box>
-
-
-      {/* small screen */}
-      <Box
-        sx={{
-          display: { xs: "none", sm: "flex", md: "none" },
-          flexDirection: "column",
-          alignItems: "flex-start",
-          //border: "2px solid red",
-          width: "38%",
-        }}
-      >
-        <Typography
-          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
-        >
-          CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.
-        </Typography>
-        <Box sx={{ display: "flex", gap: "0.2vw" }}>
-          <Typography
-            sx={{
-              fontWeight: "600",
-              fontSize: "3.2vw",
-              letterSpacing: 2,
-              color: 'primary.dark'
-            }}
-          >
-            Our Families
-          </Typography>
-        </Box>
-        <Typography
-          align="justify"
-          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "1.5vw" }}
-        >
-          We will work with you to develop individualised care plans, including
-          management of chronic diseases. If we cannot assist, we can provide
-          referrals or advice about the type of practitioner you require. We
-          treat all enquiries sensitively and in the strictest confidence.
-        </Typography>
-      </Box>
-
-
-      {/* medium+ screen */}
-      <Box
-        sx={{
-          display: { xs: "none", md: "flex" },
-          flexDirection: "column",
-          alignItems: "flex-start",
-          //border: "2px solid red",
-          width: "42%",
-        }}
-      >
-        <Typography
-          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
-        >
-          CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.
-        </Typography>
-        <Box sx={{ display: "flex", gap: "0.2vw" }}>
-          <Typography
-            sx={{
-              fontWeight: "600",
-              fontSize: "3vw",
-              letterSpacing: 2,
-              color: 'primary.dark'
-            }}
-          >
-            Our Families
-          </Typography>
-        </Box>
-        <Typography sx={{ color: 'secondary.gray', margin: "20px 0px" }} align="justify">
-          We will work with you to develop individualised care plans, including
-          management of chronic diseases. If we cannot assist, we can provide
-          referrals or advice about the type of practitioner you require. We
-          treat all enquiries sensitively and in the strictest confidence.
-        </Typography>
-      </Box>
 
       <Box
         component="img"

@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header";
+import Header from "../../components/Header/Header.jsx";
 import { Box } from "@mui/material";
 import Hero from "../../components/Sections/Hero/Hero.jsx";
 import CouponSection from "../../components/Sections/CouponSection.jsx";
@@ -8,13 +8,11 @@ import PatientCare from "../../components/Sections/PatientCare.jsx";
 import News from "../../components/Sections/News.jsx";
 import Families from "../../components/Sections/Families.jsx";
 import Faq from "../../components/Sections/Faq.jsx";
-import DownloadApp from "../../components/Sections/DownloadApp.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
   
 const HomePage = () => {
   return (
     <Box>
-      <Header />
+      {/* <Header /> */}
       <Hero/>
       <CouponSection/>
       <Specialisations/>
@@ -23,8 +21,6 @@ const HomePage = () => {
       <News/>
       <Families/>
       <Faq/>
-      <DownloadApp/>
-      <Footer/>
     </Box>
   );
 };

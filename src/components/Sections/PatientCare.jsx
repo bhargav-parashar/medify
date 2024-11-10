@@ -65,7 +65,7 @@ const PatientCare = () => {
       {/* Extra small screen */}
       <Box
         sx={{
-          display: { xs: "flex", sm: "none" },
+          display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
           //border: "2px solid red",
@@ -73,7 +73,7 @@ const PatientCare = () => {
         }}
       >
         <Typography
-          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "2vw" }}
+          sx={{ color: 'primary.main', fontWeight: "600", fontSize:{xs: "2vw",sm:"1vw"} }}
         >
           HELPING PATIENTS FROM AROUND THE GLOBE!!
         </Typography>
@@ -81,7 +81,7 @@ const PatientCare = () => {
           <Typography
             sx={{
               fontWeight: "600",
-              fontSize: "4vw",
+              fontSize:{xs: "4vw",sm:"3.2vw",md:"3vw"},
               letterSpacing: 2,
             }}
           >
@@ -91,7 +91,8 @@ const PatientCare = () => {
         </Box>
         <Typography
           align="justify"
-          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "2vw" }}
+          sx={{ color: 'secondary.gray', margin:{xs: "10px 0px",sm:"10px 0px",md:"20px 0px"}, 
+          fontSize:{xs: "2vw",sm:"1.5vw",md:""} }}
         >
           Our goal is to deliver quality of care in a courteous, respectful, and
           compassionate manner. We hope you will allow us to care for you and
@@ -102,105 +103,17 @@ const PatientCare = () => {
             sx={{
               display: "flex",
               gap: "0.5vw",
-              marginBottom: "10px",
-              alignItems: "center",
+              marginBottom: {xs:"10px",md:"20px"},
+              alignItems: {xs:"center",sm:""}
             }}
           >
             <Box
               component="img"
               alt="check-logo"
               src={checkLogo}
-              sx={{ height: "2.5vw" }}
+              sx={{ height: {xs:"2.5vw",sm:"2vw",md:""} }}
             />
-            <Typography sx={{ fontSize: "2vw" }}>{point.text}</Typography>
-          </Box>
-        ))}
-      </Box>
-
-      {/* small screen */}
-      <Box
-        sx={{
-          display: { xs: "none", sm: "flex", md: "none" },
-          flexDirection: "column",
-          alignItems: "flex-start",
-          //border: "2px solid red",
-          width: "90%",
-        }}
-      >
-        <Typography
-          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
-        >
-          HELPING PATIENTS FROM AROUND THE GLOBE!!
-        </Typography>
-        <Box sx={{ display: "flex", gap: "0.2vw" }}>
-          <Typography
-            sx={{
-              fontWeight: "600",
-              fontSize: "3.2vw",
-              letterSpacing: 2,
-            }}
-          >
-            <Box component='span' sx={{ color: 'primary.dark' }}>Patient</Box>{" "}
-            <Box component='span' sx={{ color: 'primary.main' }}>Caring!</Box>
-          </Typography>
-        </Box>
-        <Typography
-          align="justify"
-          sx={{ color: 'secondary.gray', margin: "10px 0px", fontSize: "1.5vw" }}
-        >
-          Our goal is to deliver quality of care in a courteous, respectful, and
-          compassionate manner. We hope you will allow us to care for you and
-          strive to be the first and best choice for healthcare.
-        </Typography>
-        {pointers.map((point) => (
-          <Box sx={{ display: "flex", gap: "0.5vw", marginBottom: "10px" }}>
-            <Box
-              component="img"
-              alt="check-logo"
-              src={checkLogo}
-              sx={{ height: "2vw" }}
-            />
-            <Typography sx={{ fontSize: "1.5vw" }}>{point.text}</Typography>
-          </Box>
-        ))}
-      </Box>
-
-      {/* medium+ screen */}
-      <Box
-        sx={{
-          display: { xs: "none", md: "flex" },
-          flexDirection: "column",
-          alignItems: "flex-start",
-          //border: "2px solid red",
-          width: "90%",
-        }}
-      >
-        <Typography
-          sx={{ color: 'primary.main', fontWeight: "600", fontSize: "1vw" }}
-        >
-          HELPING PATIENTS FROM AROUND THE GLOBE!!
-        </Typography>
-        <Box sx={{ display: "flex", gap: "0.2vw" }}>
-          <Typography
-            sx={{
-              fontWeight: "600",
-              fontSize: "3vw",
-              letterSpacing: 2,
-            }}
-          >
-            <Box component='span' sx={{ color: 'primary.dark' }}>Patient</Box>{" "}
-            <Box component='span' sx={{ color: 'primary.main' }}>Caring!</Box>
-          </Typography>
-        </Box>
-        <Typography align="justify" sx={{ color: 'secondary.gray', margin: "20px 0px" }}>
-          Our goal is to deliver quality of care in a courteous, respectful, and
-          compassionate manner. We hope you will allow us to care for you and
-          strive to be the first and best choice for healthcare.
-        </Typography>
-        {pointers.map((point) => (
-          <Box sx={{ display: "flex", gap: "0.5vw", marginBottom: "20px" }}>
-            <Box component="img" alt="check-logo" src={checkLogo} />
-            <Typography sx={{ fontSize: "1.5vw" }}>{point.text}</Typography>
+            <Typography sx={{ fontSize: {xs:"2vw",sm:"1.5vw"} }}>{point.text}</Typography>
           </Box>
         ))}
       </Box>

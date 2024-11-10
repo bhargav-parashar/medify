@@ -1,76 +1,28 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
+import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const StyledTabs = styled((props) => (
-  <Tabs
-    {...props}
-    TabIndicatorProps={{
-      children: <span className="MuiTabs-indicatorSpan" />,
-      sx: { height: 4 },
-    }}
-  />
-))({
-  "& .MuiTabs-indicator": {
-    display: "flex",
-    justifyContent: "center",
-    backgroundColor: "transparent",
-  },
-  "& .MuiTabs-indicatorSpan": {
-    maxWidth: 80,
-    width: "100%",
-    backgroundColor: 'primary.main',
-  },
-  "& .css-1wxkzlj-MuiTabs-flexContainer":{
-    display:'flex',
-    justifyContent:'space-around'
-  }
-  
-});
+const Tabs = ({handleClick,selectedTab}) => {
 
-const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
-  ({ theme }) => ({
-    textTransform: "none",
-    fontSize: "0.75rem",
-    "&.Mui-selected": {
-      color: 'primary.main',
-      fontWeight:'700'
-    },
-    "& .MuiTab-root.Mui-selected": {
-      style: 'primary.main',
-      
-    },
-    "& button": {
-      color: 'primary.dark',
-      textTransform: "none",
-      fontSize: "0.75rem",
-    },
-  })
-);
-
-export default function CustomizedTabs({ pages }) {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const selected = { 
+    color:"primary.main",
+    fontWeight:"bold",
+    fontSize:"1vw"
   };
-
+  const unSelected = { 
+    color:"primary.dark",
+    fontSize:"1vw"
+  };
+  console.log('executed');
   return (
-    <Box  sx={{ width: "100%" }}>
-      <Box  sx={{ bgcolor: "transparent" }}>
-        <StyledTabs
-          value={value}
-          onChange={handleChange}
-          aria-label="styled tabs example"
-          
-        >
-          {pages.map((page,idx) => (
-            <StyledTab key={idx} label={page} />
-          ))}
-        </StyledTabs>
-      </Box>
+    <Box sx={{ display: "flex", gap: "4vw" }}>
+
+      <Link to="/" style={{textDecoration:'none'}}><Typography id={1} sx={selectedTab === 1 ? selected : unSelected} onClick={()=>handleClick(1)} >Find Doctors</Typography></Link>
+      <Link to="/search" style={{textDecoration:'none'}}><Typography id={2} sx={selectedTab === 2 ? selected : unSelected} onClick={()=>handleClick(2)} >Hospitals</Typography></Link>
+      <Link to="/" style={{textDecoration:'none'}}><Typography id={3} sx={selectedTab === 3 ? selected : unSelected} onClick={()=>handleClick(3)} >Medicines</Typography></Link>
+      <Link to="/" style={{textDecoration:'none'}}><Typography id={4} sx={selectedTab === 4 ? selected : unSelected} onClick={()=>handleClick(4)} >Surgeries</Typography></Link>
+      <Link to="/" style={{textDecoration:'none'}}><Typography id={5} sx={selectedTab === 5 ? selected : unSelected} onClick={()=>handleClick(5)} >Software for Provider</Typography></Link>
+      <Link to="/" style={{textDecoration:'none'}}><Typography id={6} sx={selectedTab === 6 ? selected : unSelected} onClick={()=>handleClick(6)} >Facilities</Typography></Link>
     </Box>
   );
-}
+};
+export default Tabs;

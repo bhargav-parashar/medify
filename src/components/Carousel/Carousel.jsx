@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function Carousel({ data, slidesPerView = 1, spaceBetween=30 }) {
+export default function Carousel({ data,slidesPerView=1,  spaceBetween=30 }) {
   return (
     <>
       <Swiper
