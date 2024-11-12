@@ -17,7 +17,7 @@ export default function ControlledAccordions({ data }) {
       {data.map((item, idx) => (
         <Accordion
           disableGutters
-          key={item.idx}
+          key={item.id}
           expanded={expanded === `panel${idx}`}
           onChange={handleChange(`panel${idx}`)}
           elevation={0}

@@ -12,8 +12,7 @@ const Tabs = ({handleClick,selectedTab}) => {
     color:"primary.dark",
     fontSize:"1vw"
   };
-  console.log('executed');
-  return (
+  return (  
     <Box sx={{ display: "flex", gap: "4vw" }}>
 
       <Link to="/" style={{textDecoration:'none'}}><Typography id={1} sx={selectedTab === 1 ? selected : unSelected} onClick={()=>handleClick(1)} >Find Doctors</Typography></Link>

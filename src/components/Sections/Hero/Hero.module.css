@@ -1,6 +1,7 @@
 @media (min-width: 900px) {
   .hero {
-    height: 700px;
+   
+    height:700px;
     background: linear-gradient(
       81deg,
       #e7f0ff 9.01%,

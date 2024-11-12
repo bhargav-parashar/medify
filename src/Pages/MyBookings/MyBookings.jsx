@@ -6,7 +6,7 @@ const Details = () => {
   return (
     <Box>
       {/* <Header bookingsPage/> */}
-      <Bookings/>
+      {/* <Bookings/> */}
     </Box>
   );
 };

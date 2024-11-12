@@ -53,7 +53,7 @@ const Hero = () => {
           Connect instantly with a 24x7 specialist or choose to video visit a
           particular doctor.
         </Typography>
-        <ButtonPrimary label="Find Centers" width="120px" margin="5px 00px"/>
+        <ButtonPrimary label="Find Centers" width="120px" margin="5px 0px"/>
       </Box>
       <Box
         className={styles.doctorHeroImage}

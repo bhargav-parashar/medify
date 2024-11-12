@@ -126,6 +126,7 @@ const Footer = () => {
           >
             {socialMedia.map((item) => (
               <Box
+             
                 key={item.id}
                 component="img"
                 src={item.logo}
@@ -152,6 +153,7 @@ const Footer = () => {
         >
           {linkSet1.map((item) => (
             <Link
+              key={item.id}
               sx={{
                 cursor: "pointer",
                 color: "secondary.white",
@@ -181,6 +183,7 @@ const Footer = () => {
         >
           {linkSet2.map((item) => (
             <Link
+              key={item.id}
               sx={{
                 cursor: "pointer",
                 color: "secondary.white",
@@ -209,6 +212,7 @@ const Footer = () => {
         >
           {linkSet1.map((item) => (
             <Link
+              key={item.id}
               sx={{
                 cursor: "pointer",
                 color: "secondary.white",

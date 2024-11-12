@@ -84,19 +84,19 @@ const Doctors = () => {
 
       {/* Medium screen */}
       <Box sx={{mt:"20px", display:{xs:"none",md:"block"} }}>
-        <Carousel slidesPerView={4}  spaceBetween={40} data={cards.map((slide) => <DocCard data={slide} /> )} />
+        <Carousel slidesPerView={4}  spaceBetween={40} data={cards.map((slide) => <DocCard key={slide.id} data={slide} /> )} />
       </Box>
 
       
       {/* Small screen */}
       <Box sx={{mt:"20px", display:{xs:"none",sm:"block",md:"none"} }}>
-        <Carousel slidesPerView={3}  spaceBetween={30} data={cards.map((slide) => <DocCard data={slide} /> )} />
+        <Carousel slidesPerView={3}  spaceBetween={30} data={cards.map((slide) => <DocCard key={slide.id} data={slide} /> )} />
       </Box>
 
 
        {/* Extra small screen */}
       <Box sx={{mt:"20px", display:{xs:"block",sm:"none"} }}>
-        <Carousel slidesPerView={2}  spaceBetween={10} data={cards.map((slide) => <DocCard data={slide} /> )} />
+        <Carousel slidesPerView={2}  spaceBetween={10} data={cards.map((slide) => <DocCard key={slide.id} data={slide} /> )} />
       </Box>
 
      </Box>

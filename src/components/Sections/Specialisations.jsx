@@ -101,7 +101,7 @@ const Specialisations = () => {
           height="100%"
         >
           {cards.map((card) => (
-            <Grid size={3}>
+            <Grid key={card.id} size={3}>
               <TextCard
                 key={card.id}
                 id={card.id}

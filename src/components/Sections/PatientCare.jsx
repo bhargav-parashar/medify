@@ -100,6 +100,7 @@ const PatientCare = () => {
         </Typography>
         {pointers.map((point) => (
           <Box
+            key={point.id}
             sx={{
               display: "flex",
               gap: "0.5vw",

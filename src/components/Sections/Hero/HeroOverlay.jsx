@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useState,useContext } from "react";
 import styles from "./HeroOverlay.module.css";
 import Grid from "@mui/material/Grid2";
 import { Box, Typography } from "@mui/material";
@@ -9,6 +9,7 @@ import labCard from "../../../assets/Images/drugstore-card.png";
 import hospitalCard from "../../../assets/Images/hospital-card.png";
 import capsuleCard from "../../../assets/Images/capsule-card.png";
 import ambulanceCard from "../../../assets/Images/ambulance-card.png";
+import {SelectedTabContext } from "../../Context/SelectedTabContext.jsx";
 
 const cards = [
   {
@@ -39,6 +40,7 @@ const cards = [
 ];
 
 const HeroOverlay = () => {
+  
   const [selectedCard, setSelectedCard] = useState(3);
   const handleClick = (id) => {
     setSelectedCard(id);
@@ -80,7 +82,7 @@ const HeroOverlay = () => {
           height="100%"
         >
           {cards.map((card) => (
-            <Grid item key={card.title} size={{ xs: 4, md: 2.4 }}>
+            <Grid  key={card.id} item size={{ xs: 4, md: 2.4 }}>
               <TextCard
                 key={card.id}
                 id={card.id}

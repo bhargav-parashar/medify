@@ -1,22 +1,18 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../../assets/Logo/Logo.svg";
 import Tabs from "./Tabs/Tabs";
 import ButtonPrimary from "../Buttons/ButtonPrimary.jsx";
-import { Link,useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { SelectedTabContext } from "../Context/SelectedTabContext.jsx";
 
-
-function ResponsiveAppBar({ detailsPage, bookingsPage }) {
+function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const nav = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -25,16 +21,11 @@ function ResponsiveAppBar({ detailsPage, bookingsPage }) {
     setAnchorElNav(null);
   };
 
-  const backgroundCol = detailsPage
-    ? "white"
-    : "linear-gradient(81deg, rgba(231,240,255,1) , rgba(232, 241, 255,1)  )";
-
-  const [selectedTab, setSelecteTab] = React.useState(0);
+  const { selectedTab, setSelectedTab } = React.useContext(SelectedTabContext);
   const handleClick = (id) => {
-    console.log(id);
-    setSelecteTab(id);
+    setSelectedTab(id);
   };
- 
+
   return (
     <>
       <Box
@@ -61,23 +52,34 @@ function ResponsiveAppBar({ detailsPage, bookingsPage }) {
           cleanliness.
         </Typography>
       </Box>
-      <AppBar position="static" elevation={0}>
-        <Container
+
+      <Box>
+        <Box
           maxWidth="xl"
           sx={{
             position: "fixed",
             top: "40px",
             zIndex: "1000",
-            background: backgroundCol,
+            background:
+              "linear-gradient(81deg, rgba(231,240,255,1) , rgba(232, 241, 255,1)  )",
+            //border:"2px solid red",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "100%",
+            boxSizing: "border-box",
+            padding: "0px 0px",
           }}
         >
-          <Toolbar
-            disableGutters
+          <Box
             sx={{
-              display: "flex",
+              display: { xs: "none", md: "flex" },
               justifyContent: "space-between",
               alignItems: "center",
               width: { xs: "100%", lg: "90%" },
+              //border:"2px solid pink",
+              height: "65px",
+              padding: "0px 2vw",
             }}
           >
             <Link to="/">
@@ -100,18 +102,32 @@ function ResponsiveAppBar({ detailsPage, bookingsPage }) {
                 display: {
                   xs: "none",
                   md: "flex",
-                  justifyContent: "space-around",
-                  alignItems: "center",
                 },
+                justifyContent: "space-around",
+                alignItems: "center",
               }}
             >
               <Tabs handleClick={handleClick} selectedTab={selectedTab} />
-            
+
               <Link to="/my-bookings">
-               <ButtonPrimary label="My Bookings" margin="0px 0px 0px 20px" handleclick={()=>handleClick(7)} />
+                <ButtonPrimary
+                  label="My Bookings"
+                  margin="0px 0px 0px 20px"
+                  handleclick={() => handleClick(7)}
+                />
               </Link>
             </Box>
+          </Box>
 
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: { xs: "100%", lg: "90%" },
+              //border:"2px solid pink"
+            }}
+          >
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -196,31 +212,33 @@ function ResponsiveAppBar({ detailsPage, bookingsPage }) {
               </Menu>
             </Box>
 
-            <Link to="/" ><Box
-              component="img"
-              sx={{
-                display: { xs: "flex", md: "none" },
-                mr: 1,
-                width: "82px",
-              }}
-              alt="medify-logo"
-              src={Logo}
-            /></Link>
-          </Toolbar>
-        </Container>
-      </AppBar>
-      <Box
-        sx={{
-          display: detailsPage ? "block" : "none",
-          backgroundColor: "primary.main",
-          height: { xs: "8vw", sm: "5.2vw", md: "4.5vw" },
-          width: "100%",
-          position: "fixed",
-          top: "17%",
-          zIndex: "1000",
-          borderRadius: "0px 0px 10px 10px",
-        }}
-      ></Box>
+            <Link to="/">
+              <Box
+                component="img"
+                sx={{
+                  display: { xs: "flex", md: "none" },
+                  mr: 1,
+                  width: "82px",
+                }}
+                alt="medify-logo"
+                src={Logo}
+              />
+            </Link>
+          </Box>
+
+          <Box
+            sx={{
+              backgroundColor: "primary.main",
+              height: { xs: "8vw", sm: "5.2vw", md: "4.5vw" },
+              width: "100%",
+              display:
+                selectedTab === 2 || selectedTab === 7 ? "block" : "none",
+              zIndex: "1000",
+              borderRadius: "0px 0px 10px 10px",
+            }}
+          ></Box>
+        </Box>
+      </Box>
     </>
   );
 }
