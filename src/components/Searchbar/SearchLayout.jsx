@@ -4,18 +4,19 @@ import SearchIcon from "@mui/icons-material/Search";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import Dropdown from "./Dropdown.jsx";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
-import {SelectedTabContext } from "../Context/SelectedTabContext.jsx";
+import {useNavigate, useSearchParams} from "react-router-dom";
+import { useMainContext } from "../Context/MainContextProvider.jsx";
 
-const SearchLayout = () => {
+const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
   const [states,setStates] = useState([]);
   const [cities,setCities] = useState([]);
+  const[searchParams,setSearchParams]=useSearchParams();
   const [formData,setFormData] = useState({
-    state:"",
-    city:""
+    state:searchParams.get("state")?searchParams.get("state"):"",
+    city:searchParams.get("city")?searchParams.get("city"):""
   });
   const nav = useNavigate();
-  const { selectedTab,setSelectedTab } = useContext(SelectedTabContext);
+  const { selectedTab,setSelectedTab } = useMainContext();
  
  //Get States
   useEffect(()=>{
@@ -34,7 +35,6 @@ const SearchLayout = () => {
   useEffect(()=>{
     const fetchCities = async ()=>{
       setCities([]);
-      setFormData((prevData)=>({...prevData,city:""}));
       try{
       const response = await axios.get(`https://meddata-backend.onrender.com/cities/${formData.state}`);
       setCities(response.data);
@@ -48,20 +48,29 @@ const SearchLayout = () => {
     }
   },[formData.state]);
 
+  useEffect(()=>{
+    setFormData({
+       state:"",
+       city:""
+    })
+  },[selectedTab])
+ 
+
   const handleChange = (e)=>{
     const {name,value} = e.target;
     setFormData((prev)=>({...prev,[name]:value}));  
+    if(name === "state")setFormData((prev)=>({...prev,city:""}));  
   }
 
   const handleSubmit = (e)=>{
-     //e.preventDefault();
+     e.preventDefault();
    
     if(formData.state && formData.city){
-      setSelectedTab(2);
-      nav(`/search?state=${formData.state}&city=${formData.city}`);
+       setSelectedTab(2);
+       nav(`/search?state=${formData.state}&city=${formData.city}`);
     }
   }
-
+  
   return (
     <form
     onSubmit={handleSubmit}
@@ -69,6 +78,9 @@ const SearchLayout = () => {
     <Box
       sx={{
         //border: "2px solid black",
+        backgroundColor:{backgroundColor},
+        boxShadow:{shadow},
+        borderRadius:"10px",
         display: "flex",
         height:{xs: "fit-content", sm: "100px"},
         flexDirection:  {xs:"column",sm: "row"},

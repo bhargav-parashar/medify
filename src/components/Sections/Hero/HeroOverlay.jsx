@@ -1,4 +1,4 @@
-import react, { useState,useContext } from "react";
+import react, { useState} from "react";
 import styles from "./HeroOverlay.module.css";
 import Grid from "@mui/material/Grid2";
 import { Box, Typography } from "@mui/material";
@@ -9,7 +9,7 @@ import labCard from "../../../assets/Images/drugstore-card.png";
 import hospitalCard from "../../../assets/Images/hospital-card.png";
 import capsuleCard from "../../../assets/Images/capsule-card.png";
 import ambulanceCard from "../../../assets/Images/ambulance-card.png";
-import {SelectedTabContext } from "../../Context/SelectedTabContext.jsx";
+
 
 const cards = [
   {
@@ -45,6 +45,7 @@ const HeroOverlay = () => {
   const handleClick = (id) => {
     setSelectedCard(id);
   };
+ 
   return (
     <Box className={styles.heroOverlay}>
       <SearchLayout />

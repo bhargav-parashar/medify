@@ -9,7 +9,8 @@ import Logo from "../../assets/Logo/Logo.svg";
 import Tabs from "./Tabs/Tabs";
 import ButtonPrimary from "../Buttons/ButtonPrimary.jsx";
 import { Link } from "react-router-dom";
-import { SelectedTabContext } from "../Context/SelectedTabContext.jsx";
+import SearchLayout from "../Searchbar/SearchLayout.jsx";
+import { useMainContext } from "../Context/MainContextProvider.jsx";
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -21,11 +22,12 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  const { selectedTab, setSelectedTab } = React.useContext(SelectedTabContext);
+  const { selectedTab, setSelectedTab } = useMainContext();
   const handleClick = (id) => {
     setSelectedTab(id);
   };
 
+  
   return (
     <>
       <Box
@@ -231,12 +233,15 @@ function ResponsiveAppBar() {
               backgroundColor: "primary.main",
               height: { xs: "8vw", sm: "5.2vw", md: "4.5vw" },
               width: "100%",
-              display:
-                selectedTab === 2 || selectedTab === 7 ? "block" : "none",
+              display:selectedTab === 2 || selectedTab === 7 ? "block" : "none",
               zIndex: "1000",
               borderRadius: "0px 0px 10px 10px",
+              boxSizing:"border-box",
+              padding:"1vw 5vw 0vw 5vw"
             }}
-          ></Box>
+          > 
+            <SearchLayout backgroundColor="white" shadow="6px 6px 35px 0px #1028511C"/>
+          </Box>
         </Box>
       </Box>
     </>
