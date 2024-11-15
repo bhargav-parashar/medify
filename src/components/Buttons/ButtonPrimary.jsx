@@ -11,18 +11,22 @@ const ButtonPrimary = ({
   fontSize = "0.75rem",
   padding = "none",
   bckColor = "primary.main",
-  handleclick
+  handleclick,
+  variant="contained",
+  color="secondary.white",
+  border=""
+  
 }) => {
   return (
     <Button
       type={type}
-      variant="contained"
+      variant={variant}
       startIcon={icon}
       disableElevation={disableElevation}
       onClick={handleclick}
       sx={{
         my: 2,
-        color: "secondary.white",
+        color: color,
         background: bckColor,
         textTransform: "none",
         fontSize: fontSize,
@@ -30,6 +34,7 @@ const ButtonPrimary = ({
         width: width,
         margin: margin,
         height: height,
+        border:border
       }}
     >
       {label}

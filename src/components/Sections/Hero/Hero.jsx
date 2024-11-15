@@ -3,10 +3,12 @@ import { Typography, Box, Button } from "@mui/material";
 import HeroDoctor from "../../../assets/Images/HeroDoctor.svg";
 import HeroOverlay from "./HeroOverlay";
 import ButtonPrimary from "../../Buttons/ButtonPrimary";
+import Header from "../../Header/Header.jsx";
 
 const Hero = () => {
   return (
     <Box className={styles.hero}>
+      <Header/>
       <Box className={styles.heroText}>
         <Typography
           variant="h5"

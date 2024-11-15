@@ -1,20 +1,32 @@
 import { Box, Typography } from "@mui/material";
+import react,{useState} from 'react';
 import Prime from "../../assets/Images/prime-badge.png";
 import Image from "../../assets/Images/center-card.png";
 import ThumbsUp from "../../assets/Images/thumbsUp.png";
-import Button from "../../components/Buttons/ButtonPrimary.jsx";
+import Button from "../Buttons/ButtonPrimary.jsx";
+import TimeSlot from "../Calendar/TimeSlot.jsx";
 
-const CenterCard = ({ data }) => {
+const CenterCard = ({ data,slots }) => {
+  const [showCalendar,setShowCalendar] = useState(false);
+  const handleclick = ()=>{
+    setShowCalendar((prev)=>!prev);
+  }
   return (
     <Box
+    sx={{
+      //border:"2px solid red",
+       borderRadius: "10px",
+       backgroundColor: "secondary.white"
+    }}
+    >
+    <Box
       sx={{
-        //border: "2px solid black",
+        display: "flex",
+        //border:"2px solid green",
         borderRadius: "10px",
         height: "18vw",
-        backgroundColor: "secondary.white",
         boxSizing: "border-box",
         padding: "2% 3% 3% 3%",
-        display: "flex",
       }}
     >
       <Box
@@ -185,8 +197,21 @@ const CenterCard = ({ data }) => {
         >
           Available Today
         </Typography>
-        <Button width="100%" height= {{xs:"2vw",md: "3vw"}} fontSize = "1vw" label = "Book FREE Center Visit"/>
+        <Button handleclick={handleclick} width="100%" height= {{xs:"2vw",md: "3vw"}} fontSize = "1vw" label ={showCalendar?"Hide Calendar":"Book FREE Center Visit"}  />
       </Box>
+    </Box>
+    {
+      showCalendar && ( 
+        <Box
+        sx={{
+          //border:"2px solid lightGray",
+          boxSizing: "border-box",
+          padding: "2% 3% 3% 3%"}}
+        >
+          <TimeSlot slots={slots}/>
+        </Box>
+    )
+    }
     </Box>
   );
 };

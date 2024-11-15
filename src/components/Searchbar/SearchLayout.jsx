@@ -7,7 +7,7 @@ import axios from "axios";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import { useMainContext } from "../Context/MainContextProvider.jsx";
 
-const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
+const SearchLayout = ({backgroundColor="transparent", shadow}) => {
   const [states,setStates] = useState([]);
   const [cities,setCities] = useState([]);
   const[searchParams,setSearchParams]=useSearchParams();
@@ -17,7 +17,7 @@ const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
   });
   const nav = useNavigate();
   const { selectedTab,setSelectedTab } = useMainContext();
- 
+
  //Get States
   useEffect(()=>{
     const fetchStates = async ()=>{
@@ -30,7 +30,7 @@ const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
     };
     fetchStates()
   },[]);
-  
+
   //Get Cities
   useEffect(()=>{
     const fetchCities = async ()=>{
@@ -41,7 +41,7 @@ const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
       }catch(err){
         console.log(err);
       }
-     
+
     };
     if(formData.state){
       fetchCities()
@@ -54,17 +54,17 @@ const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
        city:""
     })
   },[selectedTab])
- 
+
 
   const handleChange = (e)=>{
     const {name,value} = e.target;
-    setFormData((prev)=>({...prev,[name]:value}));  
-    if(name === "state")setFormData((prev)=>({...prev,city:""}));  
+    setFormData((prev)=>({...prev,[name]:value}));
+    if(name === "state")setFormData((prev)=>({...prev,city:""}));
   }
 
   const handleSubmit = (e)=>{
      e.preventDefault();
-   
+
     if(formData.state && formData.city){
        setSelectedTab(2);
        nav(`/search?state=${formData.state}&city=${formData.city}`);
@@ -79,7 +79,8 @@ const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
       sx={{
         //border: "2px solid black",
         backgroundColor:{backgroundColor},
-        boxShadow:{shadow},
+         boxShadow:shadow?"rgba(0, 0, 0, 0.24) 0px 3px 8px":"none",
+        //boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
         borderRadius:"10px",
         display: "flex",
         height:{xs: "fit-content", sm: "100px"},
@@ -103,7 +104,7 @@ const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
       >
         <Dropdown name="state" value={formData.state} handleChange={(e)=>handleChange(e)} placeholder="State" items={states}/>
         <Dropdown name="city" value={formData.city} handleChange={(e)=>handleChange(e)}placeholder="City" items={cities}/>
-        
+
       </Box>
       <Box
         sx={{
@@ -122,7 +123,7 @@ const SearchLayout = ({backgroundColor="transparent",shadow="none"}) => {
           height={{xs:"30px",sm: "40px"}}
         />
       </Box>
-      
+
     </Box>
     </form>
   );

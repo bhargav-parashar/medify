@@ -12,7 +12,7 @@ function App() {
     <div>
       <MainContextProvider>
         <ScrollToTop />
-        <Header />
+        {/* <Header /> */}
         <CssBaseline />
         <Outlet />
         <DownloadApp />

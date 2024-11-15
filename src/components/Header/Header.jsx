@@ -38,9 +38,9 @@ function ResponsiveAppBar() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          position: "fixed",
+          // position: "fixed",
           width: "100%",
-          zIndex: "1000",
+          // zIndex: "1000",
         }}
       >
         <Typography
@@ -59,11 +59,10 @@ function ResponsiveAppBar() {
         <Box
           maxWidth="xl"
           sx={{
-            position: "fixed",
-            top: "40px",
-            zIndex: "1000",
-            background:
-              "linear-gradient(81deg, rgba(231,240,255,1) , rgba(232, 241, 255,1)  )",
+            //position: "fixed",
+            //top: "40px",
+            //zIndex: "1000",
+            background:"transparent",
             //border:"2px solid red",
             display: "flex",
             flexDirection: "column",
@@ -240,7 +239,7 @@ function ResponsiveAppBar() {
               padding:"1vw 5vw 0vw 5vw"
             }}
           > 
-            <SearchLayout backgroundColor="white" shadow="6px 6px 35px 0px #1028511C"/>
+            <SearchLayout backgroundColor="white" shadow />
           </Box>
         </Box>
       </Box>
