@@ -80,7 +80,6 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        //height: "250px",
         backgroundColor: "primary.dark",
         padding: "5% 10%",
       }}
@@ -96,7 +95,6 @@ const Footer = () => {
       >
         <Box
           sx={{
-            //border: "2px solid white",
             position: "relative",
             display: "flex",
             height: { xs: "100px", md: "213px" },
@@ -126,7 +124,6 @@ const Footer = () => {
           >
             {socialMedia.map((item) => (
               <Box
-             
                 key={item.id}
                 component="img"
                 src={item.logo}
@@ -135,14 +132,12 @@ const Footer = () => {
                   height: { xs: "6vw", sm: "4vw", md: "2.5vw" },
                   cursor: "pointer",
                 }}
-                
               />
             ))}
           </Box>
         </Box>
         <Box
           sx={{
-            // border: "2px solid white",
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -159,8 +154,7 @@ const Footer = () => {
                 color: "secondary.white",
                 textDecoration: "none",
                 fontSize: { xs: "2vw", sm: "1.5vw", md: "1vw" },
-                ":hover": {color: 'primary.main'}
-                
+                ":hover": { color: "primary.main" },
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -172,7 +166,6 @@ const Footer = () => {
         </Box>
         <Box
           sx={{
-            //border: "2px solid white",
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -189,7 +182,7 @@ const Footer = () => {
                 color: "secondary.white",
                 textDecoration: "none",
                 fontSize: { xs: "2vw", sm: "1.5vw", md: "1vw" },
-                ":hover": {color: 'primary.main'}
+                ":hover": { color: "primary.main" },
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -201,7 +194,6 @@ const Footer = () => {
         </Box>
         <Box
           sx={{
-            //border: "2px solid white",
             position: "relative",
             display: { xs: "none", md: "flex" },
             flexDirection: "column",
@@ -218,7 +210,7 @@ const Footer = () => {
                 color: "secondary.white",
                 textDecoration: "none",
                 fontSize: "1vw",
-                ":hover": {color: 'primary.main'}
+                ":hover": { color: "primary.main" },
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>

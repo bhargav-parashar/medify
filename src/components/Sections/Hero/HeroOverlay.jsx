@@ -1,4 +1,4 @@
-import react, { useState} from "react";
+import React, { useState } from "react";
 import styles from "./HeroOverlay.module.css";
 import Grid from "@mui/material/Grid2";
 import { Box, Typography } from "@mui/material";
@@ -9,7 +9,6 @@ import labCard from "../../../assets/Images/drugstore-card.png";
 import hospitalCard from "../../../assets/Images/hospital-card.png";
 import capsuleCard from "../../../assets/Images/capsule-card.png";
 import ambulanceCard from "../../../assets/Images/ambulance-card.png";
-
 
 const cards = [
   {
@@ -40,16 +39,15 @@ const cards = [
 ];
 
 const HeroOverlay = () => {
-  
   const [selectedCard, setSelectedCard] = useState(3);
   const handleClick = (id) => {
     setSelectedCard(id);
   };
- 
+
   return (
     <Box className={styles.heroOverlay}>
       <SearchLayout />
-    <Typography
+      <Typography
         variant="subtitle1"
         sx={{
           color: "#102851",
@@ -65,7 +63,6 @@ const HeroOverlay = () => {
 
       <Box
         sx={{
-          //border: "2px solid green",
           margin: {
             xs: "10px 20px 20px 20px",
             sm: "5px 20px 20px 20px",
@@ -83,7 +80,7 @@ const HeroOverlay = () => {
           height="100%"
         >
           {cards.map((card) => (
-            <Grid  key={card.id} item size={{ xs: 4, md: 2.4 }}>
+            <Grid key={card.id} item size={{ xs: 4, md: 2.4 }}>
               <TextCard
                 key={card.id}
                 id={card.id}

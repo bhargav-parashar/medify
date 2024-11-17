@@ -5,7 +5,7 @@ import Select from '@mui/material/Select';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import InputAdornment from "@mui/material/InputAdornment";
 
-export default function SelectSmall({placeholder,items,name,value,handleChange}) {
+export default function SelectSmall({placeholder,items,name,value,handleChange,disabled}) {
   
 
   return (
@@ -21,6 +21,7 @@ export default function SelectSmall({placeholder,items,name,value,handleChange})
             <PlaceOutlinedIcon />
           </InputAdornment>
         }
+        disabled={disabled}
       >
         <MenuItem disabled value="">
           <em>{placeholder}</em>

@@ -85,7 +85,6 @@ const BookingModal = ({ isModalOpen, setIsModalOpen, bookingDetails }) => {
     <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
       <Box
         sx={{
-          //border:"2px solid black",
           backgroundColor: "secondary.white",
           width: { xs: "315px", sm: "315px", md: "400px" },
           borderRadius: "10px",

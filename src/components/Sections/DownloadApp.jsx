@@ -16,7 +16,7 @@ const Contact = () => {
         flexDirection: { xs: "column", sm: "row" },
         gap: "4.5vw",
         justifyContent: "center",
-        alignItems: {xs:'center',sm:'flex-start'},
+        alignItems: { xs: "center", sm: "flex-start" },
         padding: { xs: "40px 6vw", sm: "40px 6vw 0px 0px" },
       }}
     >
@@ -25,8 +25,6 @@ const Contact = () => {
         sx={{
           height: { xs: "65vw", sm: "30vw" },
           width: { xs: "65vw", sm: "30vw" },
-          //border: "2px solid green"
-          
         }}
         alt="patient-stats"
         src={image}
@@ -37,20 +35,20 @@ const Contact = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          //border: "2px solid red",
-          width: {xs:'60vw', sm:'42%'},
+
+          width: { xs: "60vw", sm: "42%" },
           margin: "3vw 0px",
-          position:'relative'
+          position: "relative",
         }}
       >
         <Box>
           <Typography
             sx={{
               fontWeight: "600",
-              fontSize:{xs:'5vw',sm:'3vw'},
+              fontSize: { xs: "5vw", sm: "3vw" },
               letterSpacing: 2,
               color: "primary.dark",
-              lineHeight: {xs:'20px',sm:'25px'}
+              lineHeight: { xs: "20px", sm: "25px" },
             }}
           >
             Download the
@@ -58,7 +56,7 @@ const Contact = () => {
           <Typography
             sx={{
               fontWeight: "600",
-              fontSize: {xs:'5vw',sm:'3vw'},
+              fontSize: { xs: "5vw", sm: "3vw" },
               letterSpacing: 2,
             }}
           >
@@ -87,8 +85,8 @@ const Contact = () => {
             gap: [2],
             flexDirection: { xs: "column", sm: "row" },
             alignItems: "center",
-            width:'100%',
-            mt:{xs:1,sm:1}
+            width: "100%",
+            mt: { xs: 1, sm: 1 },
           }}
         >
           <TextField
@@ -99,7 +97,7 @@ const Contact = () => {
               "& .MuiOutlinedInput-input": {
                 fontSize: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
               },
-              width:{xs:'100%',sm:'24vw'} ,
+              width: { xs: "100%", sm: "24vw" },
             }}
             size="small"
             placeholder="Enter phone number"
@@ -125,9 +123,7 @@ const Contact = () => {
             label="Send SMS"
             type="submit"
             variant="contained"
-            width={{xs:'100%',sm:'fit-content'}} 
-            //height={30}
-            
+            width={{ xs: "100%", sm: "fit-content" }}
             fontSize={{ xs: "2vw", sm: "1.5vw", md: "1.1vw" }}
             padding={{ xs: "11px 0px", sm: "11px 0px", md: "16px 10px" }}
             disableElevation
@@ -140,8 +136,8 @@ const Contact = () => {
             display: "flex",
             marginTop: { xs: "2.5vw", sm: "2.5vw", md: "3vw" },
             gap: { xs: "1.2vw", sm: "1.8vw", md: "2vw" },
-            flexDirection:{xs:'column',sm:'row'},
-            width:'100%'
+            flexDirection: { xs: "column", sm: "row" },
+            width: "100%",
           }}
         >
           <Button
@@ -158,7 +154,7 @@ const Contact = () => {
                 alt="apple-logo"
               />
             }
-            width={{xs:'100%',sm:"fit-content"}}
+            width={{ xs: "100%", sm: "fit-content" }}
             height="fit-content"
             fontSize={{ xs: "2vw", sm: "1.7vw" }}
             padding={{ xs: "11px", sm: "9px 15px" }}
@@ -177,26 +173,26 @@ const Contact = () => {
                 alt="playstore-logo"
               />
             }
-            width={{xs:'100%',sm:"fit-content"}}
+            width={{ xs: "100%", sm: "fit-content" }}
             height="fit-content"
             fontSize={{ xs: "2vw", sm: "1.7vw" }}
             padding={{ xs: "11px", sm: "9px 15px" }}
             disableElevation
           />
         </Box>
-        
+
         <Box
           component="img"
           src={arrow}
-          alt='arrow'
+          alt="arrow"
           sx={{
-          height: { xs: "10vw", sm: "6vw" },
-          width: { xs: "8vw", sm: "4vw" },
-          //border: "2px solid green",
-          transform: 'rotate(10deg)',
-          position:'absolute',
-          left:'-11%',
-          top:'8%'
+            height: { xs: "10vw", sm: "6vw" },
+            width: { xs: "8vw", sm: "4vw" },
+
+            transform: "rotate(10deg)",
+            position: "absolute",
+            left: "-11%",
+            top: "8%",
           }}
         />
       </Box>

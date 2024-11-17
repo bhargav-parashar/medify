@@ -23,7 +23,7 @@ const Faq = () => {
           color: "primary.main",
           fontSize: { xs: "10px", sm: "15px", md: "17px" },
           letterSpacing: "0.1px",
-          lineHeight: "20px"
+          lineHeight: "20px",
         }}
       >
         Get Your Answer
@@ -52,7 +52,7 @@ const Faq = () => {
           sx={{
             height: { xs: "50vw", sm: "35vw" },
             width: { xs: "65vw", sm: "50vw" },
-            //border: "2px solid green",
+
             position: "relative",
           }}
           alt="faq-image-section"
@@ -70,8 +70,8 @@ const Faq = () => {
             sx={{
               boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
               backgroundColor: "secondary.white",
-              height: {xs:'8vw',sm:'4.9vw'},
-              width: {xs:'8vw',sm:'4.9vw'},
+              height: { xs: "8vw", sm: "4.9vw" },
+              width: { xs: "8vw", sm: "4.9vw" },
               borderRadius: "50%",
               display: "flex",
               justifyContent: "center",
@@ -94,9 +94,9 @@ const Faq = () => {
           <Box
             sx={{
               boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-              backgroundColor: 'secondary.white',
-              height: {xs:'7vw',sm:'5vw'},
-              width: {xs:'20vw',sm:'13vw'},
+              backgroundColor: "secondary.white",
+              height: { xs: "7vw", sm: "5vw" },
+              width: { xs: "20vw", sm: "13vw" },
               borderRadius: "4px",
               display: "flex",
               justifyContent: "center",
@@ -111,27 +111,31 @@ const Faq = () => {
             <Box
               component="img"
               sx={{
-                width: {xs:'3vw',sm:'2vw'},
-                height: {xs:'3vw',sm:'2vw'},
+                width: { xs: "3vw", sm: "2vw" },
+                height: { xs: "3vw", sm: "2vw" },
                 marginLeft: "8%",
               }}
               src={popupHappy}
               alt="popup-happy"
             />
-            
+
             <Box sx={{ marginRight: "8%" }}>
               <Typography
                 sx={{
-                  color: 'primary.dark',
+                  color: "primary.dark",
                   fontWeight: "600",
                   letterSpacing: 1,
-                  fontSize: {xs:'2vw',sm:'1.3vw'},
+                  fontSize: { xs: "2vw", sm: "1.3vw" },
                 }}
               >
                 84k+
               </Typography>
               <Typography
-                sx={{ color: 'secondary.gray', letterSpacing: 1, fontSize:{xs:'1vw',sm:'0.8vw'},  }}
+                sx={{
+                  color: "secondary.gray",
+                  letterSpacing: 1,
+                  fontSize: { xs: "1vw", sm: "0.8vw" },
+                }}
               >
                 Happy Patients
               </Typography>
@@ -143,17 +147,15 @@ const Faq = () => {
           sx={{
             height: { xs: "50vw", sm: "35vw" },
             width: { xs: "65vw", sm: "50vw" },
-            display:"flex",
+            display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
             boxSizing: "border-box",
-            padding:{xs:"0px 0px",md:"2vw 0px"} ,
-            //border: "2px solid red",
+            padding: { xs: "0px 0px", md: "2vw 0px" },
           }}
         >
           <Accordion data={faqData} />
         </Box>
-
       </Box>
     </Box>
   );

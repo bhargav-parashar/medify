@@ -41,7 +41,6 @@ const News = () => {
       alignItems="center"
       sx={{
         paddingBottom: "40px",
-        
       }}
     >
       <Typography
@@ -49,7 +48,7 @@ const News = () => {
           marginTop: { xs: "25px", sm: "30px", md: "40px " },
           marginBottom: "10px",
           fontWeight: "700",
-          color: 'primary.main',
+          color: "primary.main",
           fontSize: { xs: "10px", sm: "15px", md: "17px" },
           letterSpacing: "0.1px",
           lineHeight: "20px",
@@ -60,7 +59,7 @@ const News = () => {
       <Typography
         sx={{
           fontWeight: "700",
-          color: 'primary.dark',
+          color: "primary.dark",
           fontSize: { xs: "25px", sm: "30px", md: "33px " },
           letterSpacing: "0.1px",
           lineHeight: "40px",
@@ -70,19 +69,14 @@ const News = () => {
       </Typography>
       <Box
         sx={{
-          //border: "2px solid cyan",
           width: "81%",
           mt: "30px",
           display: "flex",
-          justifyContent:"space-between"
+          justifyContent: "space-between",
         }}
       >
         {articles.map((article) => (
-          <ArticleCard 
-          key={article.id} 
-          data={article} 
-          cardWidth="32%"
-          />
+          <ArticleCard key={article.id} data={article} cardWidth="32%" />
         ))}
       </Box>
     </Box>

@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import TextCard from "../Cards/TextCard.jsx";
@@ -87,7 +87,7 @@ const Specialisations = () => {
 
       <Box
         sx={{
-          //border: "2px solid black",
+          
           marginTop: "30px",
           width: "81%",
           height: "29vw",
@@ -118,7 +118,7 @@ const Specialisations = () => {
       </Box>
       <Box
         sx={{
-          //border: "2px solid black",
+          
           marginTop: "30px",
           width: "81%",
           display: { xs: "block", sm: "none" },

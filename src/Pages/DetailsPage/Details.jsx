@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import Faq from "../../components/Sections/Faq.jsx";
 import BookAppointment from "../../components/Sections/BookAppointment.jsx";

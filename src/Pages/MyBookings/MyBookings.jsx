@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Header from "../../components/Header/Header.jsx";
 import CenterCard from "../../components/Cards/CenterCard.jsx";
 import Advert from "../../assets/Images/advert-card.png";
@@ -10,55 +10,65 @@ const Details = () => {
 
   useEffect(() => {
     const existingBookings = localStorage.getItem("bookings") || [];
-    setBookings(JSON.parse(existingBookings));
+    setBookings(JSON.parse(existingBookings).reverse());
+    setFilteredList(JSON.parse(existingBookings).reverse());
   }, []);
-  
+
   return (
     <Box>
-      <Header isForBooking={true}  bookings={bookings} setFilteredList={setFilteredList} />
+      <Header
+        isForBooking={true}
+        bookings={bookings}
+        setFilteredList={setFilteredList}
+      />
       <Box>
-           
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            gap: "1.5vw",
+            background:
+              "linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%)",
 
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "flex-start",
-                gap: "1.5vw",
-                background:"linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%)",
-                //border: "2px solid red",
-                padding:{xs:"18vw 0vw", lg:"9vw 0vw"}  
-              }}
-            >
+            padding: { xs: "18vw 0vw", lg: "9vw 0vw" },
+          }}
+        >
+          <Box
+            sx={{
+              width: { xs: "80%", md: "60%" },
+              display: "flex",
+              flexDirection: "column",
+              gap: "1.5vw",
+            }}
+          >
+            {filteredList.length > 0 ? (
+              filteredList.map((item, idx) => (
+                <CenterCard key={idx} data={item} isForBooking />
+              ))
+            ) : (
               <Box
                 sx={{
-                  width: { xs: "80%", md: "60%" },
                   display: "flex",
-                  flexDirection: "column",
-                  gap: "1.5vw",
-                  //border:"2px solid green"
+                  border: "2px solid gray",
+                  borderRadius: "3px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "2vw",
                 }}
               >
-                {
-                  
-                  filteredList.length ? (filteredList.map((item, idx) => <CenterCard key={idx} data={item} isForBooking />))
-                  : (bookings.map((item, idx) => <CenterCard key={idx} data={item} isForBooking />))
-                 
-                }
+                <Typography color="gray">No Bookings Found</Typography>
               </Box>
-              <Box
-                component="img"
-                src={Advert}
-                alt="Advertisement"
-                sx={{ height: "18vw", display: { xs: "none", md: "block" } }}
-              />
-            </Box>
+            )}
           </Box>
-
-          
-
-
-      
+          <Box
+            component="img"
+            src={Advert}
+            alt="Advertisement"
+            sx={{ height: "18vw", display: { xs: "none", md: "block" } }}
+          />
+        </Box>
+      </Box>
     </Box>
   );
 };

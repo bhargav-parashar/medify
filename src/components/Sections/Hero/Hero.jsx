@@ -1,5 +1,5 @@
 import styles from "./Hero.module.css";
-import { Typography, Box, Button } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import HeroDoctor from "../../../assets/Images/HeroDoctor.svg";
 import HeroOverlay from "./HeroOverlay";
 import ButtonPrimary from "../../Buttons/ButtonPrimary";

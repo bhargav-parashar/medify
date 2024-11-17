@@ -23,7 +23,7 @@ const PatientCare = () => {
         sx={{
           height: { xs: "50vw", sm: "30vw" },
           width: { xs: "80vw", sm: "50vw" },
-          //border: "2px solid green",
+       
           position: "relative",
         }}
         alt="patient-care-image-section"
@@ -68,7 +68,7 @@ const PatientCare = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          //border: "2px solid red",
+        
           width: "90%",
         }}
       >

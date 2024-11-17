@@ -4,42 +4,43 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function Carousel({ data,slidesPerView=1,  spaceBetween=30 }) {
+export default function Carousel({
+  data,
+  slidesPerView = 1,
+  spaceBetween = 30,
+}) {
   return (
     <>
       <Swiper
-      centeredSlides={true}
+        centeredSlides={true}
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
-        loop= {true}
+        loop={true}
         navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         pagination={{
-            clickable: true,
-          }}
+          clickable: true,
+        }}
         className="mySwiper"
         autoplay={{
           delay: 2000,
           pauseOnMouseEnter: true,
         }}
         style={{
-            // border:"2px solid brown", 
-            width:"90%"}}
-        
+          width: "90%",
+        }}
       >
         {data.map((slide) => (
           <SwiperSlide
-           key={slide.id}
+            key={slide.id}
             style={{
               width: "fit-content",
-              //border: "2px solid violet ",
+
               display: "flex",
               justifyContent: "center",
-              
             }}
-          > 
+          >
             {slide}
-           
           </SwiperSlide>
         ))}
       </Swiper>

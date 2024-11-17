@@ -38,9 +38,8 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          // position: "fixed",
+
           width: "100%",
-          // zIndex: "1000",
         }}
       >
         <Typography
@@ -60,7 +59,7 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
           maxWidth="xl"
           sx={{
             background: "transparent",
-            //border:"2px solid red",
+
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -75,7 +74,7 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
               justifyContent: "space-between",
               alignItems: "center",
               width: { xs: "100%", lg: "90%" },
-              //border:"2px solid pink",
+
               height: "65px",
               padding: "0px 2vw",
             }}
@@ -123,7 +122,6 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
               justifyContent: "space-between",
               alignItems: "center",
               width: { xs: "100%", lg: "90%" },
-              //border:"2px solid pink"
             }}
           >
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -202,6 +200,7 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography
                       sx={{ textAlign: "center", color: "primary.dark" }}
+                      onClick={() => handleClick(7)}
                     >
                       My Bookings
                     </Typography>
@@ -220,6 +219,7 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
                 }}
                 alt="medify-logo"
                 src={Logo}
+                onClick={() => handleClick(0)}
               />
             </Link>
           </Box>

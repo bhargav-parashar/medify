@@ -1,4 +1,3 @@
-import Header from "../../components/Header/Header.jsx";
 import { Box } from "@mui/material";
 import Hero from "../../components/Sections/Hero/Hero.jsx";
 import CouponSection from "../../components/Sections/CouponSection.jsx";
@@ -12,7 +11,6 @@ import Faq from "../../components/Sections/Faq.jsx";
 const HomePage = () => {
   return (
     <Box>
-      {/* <Header /> */}
       <Hero/>
       <CouponSection/>
       <Specialisations/>

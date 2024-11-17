@@ -8,6 +8,7 @@ import Details from "./Pages/DetailsPage/Details.jsx";
 import MyBookings from "./Pages/MyBookings/MyBookings.jsx";
 import HomePage from "./Pages/HomePage/HomePage";
 import { SnackbarProvider } from "notistack";
+import EmptyPage from "./Pages/EmptyPage/EmptyPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,22 @@ const router = createBrowserRouter([
       {
         path: "my-bookings",
         element: <MyBookings />,
+      },
+      {
+        path: "/medicines",
+        element: <EmptyPage />,
+      },
+      {
+        path: "/surgeries",
+        element: <EmptyPage />,
+      },
+      {
+        path: "/software",
+        element: <EmptyPage />
+      },
+      {
+        path: "/facilities",
+        element: <EmptyPage />,
       },
       {
         path: "/",

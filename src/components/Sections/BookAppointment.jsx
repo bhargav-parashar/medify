@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useMainContext } from "../../components/Context/MainContextProvider.jsx";
@@ -9,7 +9,6 @@ import Advert from "../../assets/Images/advert-card.png";
 import Verified from "../../assets/Images/verified.png";
 import BookingModal from "../Modal/BookingModal.jsx";
 
-
 const BookAppointment = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [state, setState] = useState(searchParams.get("state"));
@@ -17,9 +16,8 @@ const BookAppointment = () => {
   const [centers, setCenters] = useState([]);
   const { selectedTab, setSelectedTab } = useMainContext();
   const [isLoading, setIsLoading] = useState(false);
-  const [bookingDetails,setBookingDetails] = useState({});
-  const [isModalOpen,setIsModalOpen] = useState(false);
-
+  const [bookingDetails, setBookingDetails] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const slots = {
     morning: ["11:30 AM"],
@@ -45,7 +43,6 @@ const BookAppointment = () => {
     if (state && city) {
       getCenters();
     }
-    
   }, [state, city]);
 
   useEffect(() => {
@@ -54,13 +51,13 @@ const BookAppointment = () => {
 
     setSelectedTab(2);
   }, [searchParams]);
-   
-  /*Modal*/ 
-  const handleBooking =(details)=>{
+
+  /*Modal*/
+  const handleBooking = (details) => {
     setBookingDetails(details);
-    setIsModalOpen(true)
-  }
-  
+    setIsModalOpen(true);
+  };
+
   return (
     <Box>
       <Box
@@ -89,7 +86,6 @@ const BookAppointment = () => {
                   md: "2vw 7vw 2vw 7vw",
                   lg: "0.1vw 7vw 2vw 7vw",
                 },
-              
               }}
             >
               <Typography
@@ -98,8 +94,8 @@ const BookAppointment = () => {
                   fontSize: { xs: "2.4vw", sm: "1.5vw" },
                 }}
               >
-                {centers.length} medical {centers.length > 1 ? "centers" : "center"}{" "}
-                available in
+                {centers.length} medical{" "}
+                {centers.length > 1 ? "centers" : "center"} available in
                 <Typography
                   sx={{
                     fontSize: { xs: "2.4vw", sm: "1.5vw" },
@@ -146,7 +142,6 @@ const BookAppointment = () => {
                 justifyContent: "center",
                 alignItems: "flex-start",
                 gap: "1.5vw",
-                //border: "2px solid red",
               }}
             >
               <Box
@@ -157,8 +152,13 @@ const BookAppointment = () => {
                   gap: "1.5vw",
                 }}
               >
-                {centers.map((center,idx) => (
-                  <CenterCard key={idx} data={center} slots={slots} handleBooking={handleBooking} />
+                {centers.map((center, idx) => (
+                  <CenterCard
+                    key={idx}
+                    data={center}
+                    slots={slots}
+                    handleBooking={handleBooking}
+                  />
                 ))}
               </Box>
               <Box
@@ -170,8 +170,32 @@ const BookAppointment = () => {
             </Box>
           </Box>
         )}
+        {!isLoading && centers.length === 0 && (
+          <Box
+            sx={{
+              display: "flex",
+              border: "2px solid gray",
+              borderRadius: "3px",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "2vw",
+              width: "80%",
+              margin: {
+                xs: "38vw auto 0vw auto",
+                sm: "10vw auto 0vw auto",
+                md: "1.2vw auto 0vw auto",
+              },
+            }}
+          >
+            <Typography color="gray">Select State and City </Typography>
+          </Box>
+        )}
       </Box>
-      <BookingModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} bookingDetails={bookingDetails} />
+      <BookingModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        bookingDetails={bookingDetails}
+      />
     </Box>
   );
 };
