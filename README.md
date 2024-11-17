@@ -1,22 +1,22 @@
-#Medify 
+# Medify 
 
 Medify allows users to find medical centers in a specific state and city across the USA and book appointments. 
 
-##Tech stack
+## Tech stack
 -React.js
 -Javascript
 -HTML
 -CSS
 
 
-##Third Party Libraries
+## Third Party Libraries
 -Material UI
 -Notistack
 -date-fns
 -swiperJs
 -React Router
 
-##Development details
+## Development details
 -Navigation is done via react router
 -In Home tab, a list of states is first fetched via an API call, subsequently for the selected state, a list of citie are fetched, finally for the combination of state and city, a list of medical centers are fetched.
 -User can interactively pick date and time slot while making booking in Hospitals Tab.
