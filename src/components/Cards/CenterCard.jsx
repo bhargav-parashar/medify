@@ -4,9 +4,9 @@ import Prime from "../../assets/Images/prime-badge.png";
 import Image from "../../assets/Images/center-card.png";
 import ThumbsUp from "../../assets/Images/thumbsUp.png";
 import Button from "../Buttons/ButtonPrimary.jsx";
-import TimeSlot from "../Calendar/TimeSlot.jsx";
+import Calendar from "../Calendar/Calendar.jsx";
 
-const CenterCard = ({ data,slots }) => {
+const CenterCard = ({ data,slots,handleBooking }) => {
   const [showCalendar,setShowCalendar] = useState(false);
   const handleclick = ()=>{
     setShowCalendar((prev)=>!prev);
@@ -208,7 +208,7 @@ const CenterCard = ({ data,slots }) => {
           boxSizing: "border-box",
           padding: "2% 3% 3% 3%"}}
         >
-          <TimeSlot slots={slots}/>
+          <Calendar slots={slots} details={data} handleBooking={handleBooking} />
         </Box>
     )
     }

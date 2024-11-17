@@ -1,16 +1,21 @@
 import { Box, Typography } from "@mui/material";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 
-const TimeSlot = ({ slots }) => {
+const TimeSlot = ({ slots, details, handleBooking, selectedDate }) => {
   const hours = Object.entries(slots).map((entry) => entry[0]);
+
+const handleTimeSlotClick = (slot)=>{
+  handleBooking({...details,bookingDate:selectedDate, bookingTime:slot})
+}
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      {hours.map((hour) => (
+      {hours.map((hour,idx) => (
         <Box
+          key={idx}
           sx={{
             display: "flex",
-            borderTop: "1px solid lightGray",
+            borderTop: idx===0?"":"1px solid lightGray",
             padding:{xs:"3vw 4vw 3vw 4vw",sm:"1.5vw 3vw 1.5vw 3vw"} ,
             justifyContent: "flex-start",
             gap: {xs:"5vw",sm:"2.5vw"},
@@ -37,8 +42,9 @@ const TimeSlot = ({ slots }) => {
               width: "100%",
             }}
           >
-            {slots[hour].map((slot) => (
+            {slots[hour].map((slot,idx) => (
               <ButtonPrimary
+                key={idx}
                 label={slot}
                 variant="outlined"
                 color="primary.main"
@@ -47,6 +53,7 @@ const TimeSlot = ({ slots }) => {
                 height="fit-content"
                 fontSize={{xs:"2.5vw",sm:"1.1vw"}}
                 padding="0.3vw 0.5vw"
+                handleclick={()=>handleTimeSlotClick(slot)}
               />
             ))}
           </Box>

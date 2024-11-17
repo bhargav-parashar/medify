@@ -2,6 +2,8 @@ import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import InputAdornment from "@mui/material/InputAdornment";
 
 export default function SelectSmall({placeholder,items,name,value,handleChange}) {
   
@@ -14,6 +16,11 @@ export default function SelectSmall({placeholder,items,name,value,handleChange})
         value={value}
         displayEmpty
         onChange={handleChange}
+        startAdornment={
+          <InputAdornment position="start">
+            <PlaceOutlinedIcon />
+          </InputAdornment>
+        }
       >
         <MenuItem disabled value="">
           <em>{placeholder}</em>

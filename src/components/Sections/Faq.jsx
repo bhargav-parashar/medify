@@ -23,7 +23,7 @@ const Faq = () => {
           color: "primary.main",
           fontSize: { xs: "10px", sm: "15px", md: "17px" },
           letterSpacing: "0.1px",
-          lineHeight: "20px",
+          lineHeight: "20px"
         }}
       >
         Get Your Answer

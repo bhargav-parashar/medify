@@ -11,8 +11,9 @@ import ButtonPrimary from "../Buttons/ButtonPrimary.jsx";
 import { Link } from "react-router-dom";
 import SearchLayout from "../Searchbar/SearchLayout.jsx";
 import { useMainContext } from "../Context/MainContextProvider.jsx";
+import SearchBookings from "../Searchbar/SearchBookings.jsx";
 
-function ResponsiveAppBar() {
+function Header({isForBooking=false}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -230,20 +231,33 @@ function ResponsiveAppBar() {
           <Box
             sx={{
               backgroundColor: "primary.main",
-              height: { xs: "8vw", sm: "5.2vw", md: "4.5vw" },
+              height: { xs: "8vw", sm: "6vw", md: "4.5vw" },
               width: "100%",
               display:selectedTab === 2 || selectedTab === 7 ? "block" : "none",
               zIndex: "1000",
               borderRadius: "0px 0px 10px 10px",
               boxSizing:"border-box",
-              padding:"1vw 5vw 0vw 5vw"
+              padding:"1vw 5vw 0vw 5vw",
+              position:"relative"
             }}
           > 
-            <SearchLayout backgroundColor="white" shadow />
-          </Box>
+            {
+              isForBooking && (
+                <>
+                <Typography sx={{color:"secondary.white",fontSize: { xs: "17px", sm: "20px", md: "20px " }}}>My Bookings</Typography>
+                <Box sx={{position:"absolute", left:"50%", top:"20%", transform:"translate(-50%, 0%)"}}><SearchBookings backgroundColor="white" shadow /></Box>
+                </>
+              ) 
+            }
+            {
+              !isForBooking &&(
+              <Box sx={{position:"absolute", left:"50%", top:"20%", transform:"translate(-50%, 0%)"}}><SearchLayout backgroundColor="white" shadow /></Box> 
+              )
+          }
+            </Box>
         </Box>
       </Box>
     </>
   );
 }
-export default ResponsiveAppBar;
+export default Header;

@@ -1,5 +1,5 @@
-import {useState,useEffect,useContext} from "react";
-import Box from "@mui/material/Box";
+import {useState,useEffect} from "react";
+import { Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import Dropdown from "./Dropdown.jsx";
@@ -65,9 +65,9 @@ const SearchLayout = ({backgroundColor="transparent", shadow}) => {
   const handleSubmit = (e)=>{
      e.preventDefault();
 
-    if(formData.state && formData.city){
-       setSelectedTab(2);
-       nav(`/search?state=${formData.state}&city=${formData.city}`);
+     if(formData.state && formData.city){
+      setSelectedTab(2);
+      nav(`/search?state=${formData.state}&city=${formData.city}`);
     }
   }
   
@@ -102,8 +102,10 @@ const SearchLayout = ({backgroundColor="transparent", shadow}) => {
           padding: { xs:"0px 10px 0px 10px",sm: "0px 0px 0px 0px"}
         }}
       >
-        <Dropdown name="state" value={formData.state} handleChange={(e)=>handleChange(e)} placeholder="State" items={states}/>
-        <Dropdown name="city" value={formData.city} handleChange={(e)=>handleChange(e)}placeholder="City" items={cities}/>
+       <Dropdown name="state" value={formData.state} handleChange={(e)=>handleChange(e)} placeholder="State" items={states}/>
+       <Dropdown name="city" value={formData.city} handleChange={(e)=>handleChange(e)}placeholder="City" items={cities}/>
+        
+        
 
       </Box>
       <Box
@@ -116,12 +118,13 @@ const SearchLayout = ({backgroundColor="transparent", shadow}) => {
           padding: {xs: "0px 10px 0px 10px",sm: "0px 5px 0px 5px"},
         }}
       >
-        <ButtonPrimary
-          label="Search"
-          icon= {<SearchIcon />}
-          width= {{xs:"90px",sm:"120px"}}
-          height={{xs:"30px",sm: "40px"}}
-        />
+         <ButtonPrimary
+            label="Search"
+            icon= {<SearchIcon />}
+            width= {{xs:"90px",sm:"120px"}}
+            height={{xs:"30px",sm: "40px"}}
+          />
+       
       </Box>
 
     </Box>

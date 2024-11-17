@@ -7,6 +7,8 @@ import { Box, Typography } from "@mui/material";
 import CenterCard from "../Cards/CenterCard.jsx";
 import Advert from "../../assets/Images/advert-card.png";
 import Verified from "../../assets/Images/verified.png";
+import BookingModal from "../Modal/BookingModal.jsx";
+
 
 const BookAppointment = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,6 +17,9 @@ const BookAppointment = () => {
   const [centers, setCenters] = useState([]);
   const { selectedTab, setSelectedTab } = useMainContext();
   const [isLoading, setIsLoading] = useState(false);
+  const [bookingDetails,setBookingDetails] = useState({});
+  const [isModalOpen,setIsModalOpen] = useState(false);
+
 
   const slots = {
     morning: ["11:30 AM"],
@@ -40,6 +45,7 @@ const BookAppointment = () => {
     if (state && city) {
       getCenters();
     }
+    
   }, [state, city]);
 
   useEffect(() => {
@@ -48,11 +54,17 @@ const BookAppointment = () => {
 
     setSelectedTab(2);
   }, [searchParams]);
-
+   
+  /*Modal*/ 
+  const handleBooking =(details)=>{
+    setBookingDetails(details);
+    setIsModalOpen(true)
+  }
+  
   return (
     <Box>
       <Box
-        pt={{ xs: "39%", sm: "27%", md: "25%" }}
+        pt={{ xs: "5%", sm: "10%", md: "10%" }}
         sx={{
           background:
             "linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%)",
@@ -77,7 +89,7 @@ const BookAppointment = () => {
                   md: "2vw 7vw 2vw 7vw",
                   lg: "0.1vw 7vw 2vw 7vw",
                 },
-                display: centers ? "block" : "none",
+              
               }}
             >
               <Typography
@@ -145,8 +157,8 @@ const BookAppointment = () => {
                   gap: "1.5vw",
                 }}
               >
-                {centers.map((center) => (
-                  <CenterCard data={center} slots={slots} />
+                {centers.map((center,idx) => (
+                  <CenterCard key={idx} data={center} slots={slots} handleBooking={handleBooking} />
                 ))}
               </Box>
               <Box
@@ -159,6 +171,7 @@ const BookAppointment = () => {
           </Box>
         )}
       </Box>
+      <BookingModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} bookingDetails={bookingDetails} />
     </Box>
   );
 };

@@ -34,7 +34,8 @@ const ButtonPrimary = ({
         width: width,
         margin: margin,
         height: height,
-        border:border
+        border:border,
+        cursor:"pointer"
       }}
     >
       {label}
