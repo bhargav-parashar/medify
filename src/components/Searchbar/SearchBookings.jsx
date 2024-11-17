@@ -1,13 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Box, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
+const SearchLayout = ({ backgroundColor = "transparent", shadow, bookings,setFilteredList }) => {
+  
+  const[searchItem,setSearchItem] = useState("");
+
+  // const filteredList =useMemo(()=>{
+  //   console.log('filter applied');
+  //   if(!searchItem) return bookings;  
+  //   return bookings.filter((item)=>item["Hospital Name"].toLowerCase().includes(searchItem.trim().toLowerCase()));
+  // },[bookings,searchItem]);
+
+ 
+  const filteredList = ()=>{
+    console.log('filter applied');
+    if(!searchItem) return bookings;  
+    return bookings.filter((item)=>item["Hospital Name"].toLowerCase().includes(searchItem.trim().toLowerCase()));
+  };
+  const memoizedFunction =useMemo(filteredList,[searchItem,bookings]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFilteredList(memoizedFunction); 
   };
 
   return (
@@ -17,7 +35,6 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
           //border: "2px solid black",
           backgroundColor: { backgroundColor },
           boxShadow: shadow ? "rgba(0, 0, 0, 0.24) 0px 3px 8px" : "none",
-          //boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           borderRadius: "10px",
           display: "flex",
           height: { xs: "fit-content", sm: "100px" },
@@ -25,6 +42,7 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
           justifyContent: "center",
           gap: { xs: "8px", sm: "0px" },
           margin: "20px",
+          padding:"1vw 0vw"
         }}
       >
         <Box
@@ -61,6 +79,8 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
               },
             }}
             required
+            value={searchItem}
+            onChange={(e)=>setSearchItem(e.target.value)}
           />
         </Box>
         <Box
@@ -75,9 +95,10 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
         >
           <ButtonPrimary
             label="Search"
-            icon={<SearchIcon />}
-            width={{ xs: "90px", sm: "280px" }}
-            height={{ xs: "30px", sm: "40px" }}
+            icon= {<SearchIcon />}
+            width={{ xs: "100%", sm: "280px" }}
+            height={{ xs: "fit-content", sm: "40px" }}
+            fontSize={{ xs: "1.5vw", sm: "1.2vw" }}
           />
         </Box>
       </Box>

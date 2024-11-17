@@ -13,7 +13,7 @@ import SearchLayout from "../Searchbar/SearchLayout.jsx";
 import { useMainContext } from "../Context/MainContextProvider.jsx";
 import SearchBookings from "../Searchbar/SearchBookings.jsx";
 
-function Header({isForBooking=false}) {
+function Header({ isForBooking = false, bookings, setFilteredList }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -28,7 +28,6 @@ function Header({isForBooking=false}) {
     setSelectedTab(id);
   };
 
-  
   return (
     <>
       <Box
@@ -60,10 +59,7 @@ function Header({isForBooking=false}) {
         <Box
           maxWidth="xl"
           sx={{
-            //position: "fixed",
-            //top: "40px",
-            //zIndex: "1000",
-            background:"transparent",
+            background: "transparent",
             //border:"2px solid red",
             display: "flex",
             flexDirection: "column",
@@ -233,28 +229,55 @@ function Header({isForBooking=false}) {
               backgroundColor: "primary.main",
               height: { xs: "8vw", sm: "6vw", md: "4.5vw" },
               width: "100%",
-              display:selectedTab === 2 || selectedTab === 7 ? "block" : "none",
+              display:
+                selectedTab === 2 || selectedTab === 7 ? "block" : "none",
               zIndex: "1000",
               borderRadius: "0px 0px 10px 10px",
-              boxSizing:"border-box",
-              padding:"1vw 5vw 0vw 5vw",
-              position:"relative"
+              boxSizing: "border-box",
+              padding: "1vw 5vw 0vw 5vw",
+              position: "relative",
             }}
-          > 
-            {
-              isForBooking && (
-                <>
-                <Typography sx={{color:"secondary.white",fontSize: { xs: "17px", sm: "20px", md: "20px " }}}>My Bookings</Typography>
-                <Box sx={{position:"absolute", left:"50%", top:"20%", transform:"translate(-50%, 0%)"}}><SearchBookings backgroundColor="white" shadow /></Box>
-                </>
-              ) 
-            }
-            {
-              !isForBooking &&(
-              <Box sx={{position:"absolute", left:"50%", top:"20%", transform:"translate(-50%, 0%)"}}><SearchLayout backgroundColor="white" shadow /></Box> 
-              )
-          }
-            </Box>
+          >
+            {isForBooking && (
+              <>
+                <Typography
+                  sx={{
+                    color: "secondary.white",
+                    fontSize: { xs: "3vw", sm: "20px", md: "20px " },
+                  }}
+                >
+                  My Bookings
+                </Typography>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    left: "50%",
+                    top: { xs: "-15%", sm: "20%" },
+                    transform: "translate(-50%, 0%)",
+                  }}
+                >
+                  <SearchBookings
+                    backgroundColor="white"
+                    shadow
+                    bookings={bookings}
+                    setFilteredList={setFilteredList}
+                  />
+                </Box>
+              </>
+            )}
+            {!isForBooking && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  left: "50%",
+                  top: "20%",
+                  transform: "translate(-50%, 0%)",
+                }}
+              >
+                <SearchLayout backgroundColor="white" shadow />
+              </Box>
+            )}
+          </Box>
         </Box>
       </Box>
     </>

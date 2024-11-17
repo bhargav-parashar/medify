@@ -12,26 +12,12 @@ const Details = () => {
     const existingBookings = localStorage.getItem("bookings") || [];
     setBookings(JSON.parse(existingBookings));
   }, []);
+  
   return (
     <Box>
-      <Header isForBooking={true} searchItem />
+      <Header isForBooking={true}  bookings={bookings} setFilteredList={setFilteredList} />
       <Box>
-            <Box
-              sx={{
-                // border: "2px solid black",
-                width: { xs: "80%", md: "60%" },
-                margin: {
-                  xs: "40vw auto 2vw auto",
-                  sm: "70px auto 2vw auto",
-                  md: "2vw 7vw 2vw 7vw",
-                  lg: "0.1vw 7vw 2vw 7vw",
-                },
-              
-              }}
-            >
-              
-              
-            </Box>
+           
 
             <Box
               sx={{
@@ -39,7 +25,9 @@ const Details = () => {
                 justifyContent: "center",
                 alignItems: "flex-start",
                 gap: "1.5vw",
+                background:"linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%)",
                 //border: "2px solid red",
+                padding:{xs:"18vw 0vw", lg:"9vw 0vw"}  
               }}
             >
               <Box
@@ -48,9 +36,15 @@ const Details = () => {
                   display: "flex",
                   flexDirection: "column",
                   gap: "1.5vw",
+                  //border:"2px solid green"
                 }}
               >
-                {bookings.map((item, idx) => <CenterCard key={idx} data={item} />)}
+                {
+                  
+                  filteredList.length ? (filteredList.map((item, idx) => <CenterCard key={idx} data={item} isForBooking />))
+                  : (bookings.map((item, idx) => <CenterCard key={idx} data={item} isForBooking />))
+                 
+                }
               </Box>
               <Box
                 component="img"
@@ -61,15 +55,7 @@ const Details = () => {
             </Box>
           </Box>
 
-          <Box
-        pt={{ xs: "5%", sm: "10%", md: "10%" }}
-        sx={{
-          background: "linear-gradient(#EFF5FE, rgba(241,247,255,0.47))",
-          paddingBottom: "50px",
-        }}
-      >
-        {bookings.map((item, idx) => <CenterCard key={idx} data={item} />)}
-      </Box>
+          
 
 
       
