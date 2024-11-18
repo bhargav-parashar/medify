@@ -6,6 +6,7 @@ import Dropdown from "./Dropdown.jsx";
 import axios from "axios";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useMainContext } from "../Context/MainContextProvider.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 
 const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
   const [states, setStates] = useState([]);
@@ -17,17 +18,21 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
   });
   const nav = useNavigate();
   const { selectedTab, setSelectedTab } = useMainContext();
+  const [isLoading,setIsLoading] = useState(false);
 
   //Get States
   useEffect(() => {
+    setIsLoading(true);
     const fetchStates = async () => {
       try {
         const response = await axios.get(
           "https://meddata-backend.onrender.com/states"
         );
         setStates(response.data);
+        setIsLoading(false);
       } catch (err) {
         console.log(err);
+        setIsLoading(false);
       }
     };
     fetchStates();
@@ -74,7 +79,13 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+    {
+      isLoading && selectedTab===1 ?(<Box mt={{ xs: "40vh", sm: "15vh", md: "10vh" }}>
+        {" "}
+        <Loader />
+      </Box>):(
+        <form onSubmit={handleSubmit}>
       <Box
         sx={{
           backgroundColor: { backgroundColor },
@@ -145,6 +156,12 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
         </Box>
       </Box>
     </form>
+      )
+    }
+     
+      
+    </>
+    
   );
 };
 export default SearchLayout;
