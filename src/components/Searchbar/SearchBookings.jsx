@@ -42,11 +42,12 @@ const SearchLayout = ({
           borderRadius: "10px",
           display: "flex",
           height: { xs: "fit-content", sm: "100px" },
+          width:"60vw",
           flexDirection: { xs: "column", sm: "row" },
           justifyContent: "center",
           gap: { xs: "8px", sm: "0px" },
           margin: "20px",
-          padding: "1vw 0vw",
+          padding: {xs:"4vw 0vw", sm:"1vw 0vw"}  ,
         }}
       >
         <Box
@@ -66,7 +67,7 @@ const SearchLayout = ({
               flex: 1,
               padding: "none",
               "& .MuiOutlinedInput-input": {
-                fontSize: { xs: "2vw", sm: "1.5vw", md: "1.1vw" },
+                fontSize: { xs: "3vw", sm: "1.5vw", md: "1.1vw" },
               },
               width: { xs: "100%", sm: "24vw" },
             }}
@@ -108,7 +109,7 @@ const SearchLayout = ({
             icon={<SearchIcon />}
             width={{ xs: "100%", sm: "280px" }}
             height={{ xs: "fit-content", sm: "40px" }}
-            fontSize={{ xs: "1.5vw", sm: "1.2vw" }}
+            fontSize={{ xs: "3vw", sm: "1.2vw" }}
           />
         </Box>
       </Box>

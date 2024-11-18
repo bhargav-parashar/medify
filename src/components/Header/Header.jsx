@@ -265,7 +265,7 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
                 <Typography
                   sx={{
                     color: "secondary.white",
-                    fontSize: { xs: "3vw", sm: "20px", md: "20px " },
+                    fontSize: { xs: "2.4vw", md: "2vw" },
                   }}
                 >
                   My Bookings

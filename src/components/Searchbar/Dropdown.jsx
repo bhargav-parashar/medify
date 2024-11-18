@@ -9,7 +9,7 @@ export default function SelectSmall({placeholder,items,name,value,handleChange,d
   
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 120,width:{xs:"50vw",sm:'25vw',md:'30vw'} }} size="small">
+    <FormControl sx={{ m: 1, minWidth: 120,width:{xs:"80%",sm:'25vw',md:'30vw'} }} size="small">
       {
       <Select
         name={name}

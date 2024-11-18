@@ -178,11 +178,11 @@ const BookAppointment = () => {
               borderRadius: "3px",
               justifyContent: "center",
               alignItems: "center",
-              padding: "2vw",
+              padding: "5vw",
               width: "80%",
               margin: {
-                xs: "38vw auto 0vw auto",
-                sm: "10vw auto 0vw auto",
+                xs: "40vw auto 0vw auto",
+                sm: "5vw auto 0vw auto",
                 md: "1.2vw auto 0vw auto",
               },
             }}

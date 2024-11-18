@@ -79,14 +79,15 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
         sx={{
           backgroundColor: { backgroundColor },
           boxShadow: shadow ? "rgba(0, 0, 0, 0.24) 0px 3px 8px" : "none",
-
+          
           borderRadius: "10px",
           display: "flex",
+          width:{xs:"80vw",sm:"100%"},
           height: { xs: "fit-content", sm: "100px" },
           flexDirection: { xs: "column", sm: "row" },
           justifyContent: "center",
           gap: { xs: "8px", sm: "0px" },
-          margin: "20px",
+          margin: "auto",
         }}
       >
         <Box
@@ -96,8 +97,8 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
             alignItems: "center",
             justifyContent: "space-between",
             width: { xs: "cover", sm: "70%" },
-            gap: { xs: "5px", md: "10px" },
-            padding: { xs: "0px 10px 0px 10px", sm: "0px 0px 0px 0px" },
+            gap: { xs: "0px", md: "10px" },
+            padding: { xs: "10px 10px 0px 10px", sm: "0px 0px 0px 0px" },
           }}
         >
           <Dropdown
@@ -132,13 +133,13 @@ const SearchLayout = ({ backgroundColor = "transparent", shadow }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: { xs: "center", sm: "flex-end" },
-            padding: { xs: "0px 10px 0px 10px", sm: "0px 5px 0px 5px" },
+            padding: { xs: "0px 10px 15px 10px", sm: "0px 5px 0px 5px" },
           }}
         >
           <ButtonPrimary
             label="Search"
             icon={<SearchIcon />}
-            width={{ xs: "90px", sm: "120px" }}
+            width={{ xs: "80%", sm: "120px" }}
             height={{ xs: "30px", sm: "40px" }}
           />
         </Box>

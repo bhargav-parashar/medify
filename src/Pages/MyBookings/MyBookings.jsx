@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import Header from "../../components/Header/Header.jsx";
 import CenterCard from "../../components/Cards/CenterCard.jsx";
 import Advert from "../../assets/Images/advert-card.png";
+import emptyFile from "../../assets/Images/empty-folder.svg";
 
 const Details = () => {
   const [bookings, setBookings] = useState([]);
@@ -51,24 +52,41 @@ const Details = () => {
             ) : (
               <Box
                 sx={{
+
+                  marginTop:{xs:"15vw", sm:"8vw", md:"1vw"} ,
                   display: "flex",
                   border: "2px solid gray",
                   borderRadius: "3px",
                   justifyContent: "center",
                   alignItems: "center",
-                  padding: "2vw",
+                  padding:"4vw" ,
                 }}
               >
-                <Typography color="gray">No Bookings Found</Typography>
+                <Box
+                component="Img"
+                src={emptyFile}
+                alt="empty-file"
+                sx={{
+                  height:{xs:"12vw", sm:"8vw", md:"5vw"} ,
+                 
+                  opacity:"0.2"
+                }}
+                />
+                <Typography color="gray" sx={{marginLeft:"5px"}} >No Bookings Found</Typography>
               </Box>
             )}
           </Box>
-          <Box
-            component="img"
-            src={Advert}
-            alt="Advertisement"
-            sx={{ height: "18vw", display: { xs: "none", md: "block" } }}
+          {
+            filteredList.length >0 && (
+              <Box
+                component="img"
+                src={Advert}
+                alt="Advertisement"
+                sx={{ height: "18vw", display: { xs: "none", md: "block" } }}
           />
+            )
+          }
+          
         </Box>
       </Box>
     </Box>
