@@ -34,11 +34,12 @@ const Details = () => {
             background:
               "linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%)",
 
-            padding: { xs: "18vw 0vw", lg: "9vw 0vw" },
+            padding: { xs: "28vw 0vw", sm:"18vw 0vw", md:"12vw 0vw", lg: "9vw 0vw" },
           }}
         >
           <Box
             sx={{
+            
               width: { xs: "80%", md: "60%" },
               display: "flex",
               flexDirection: "column",
