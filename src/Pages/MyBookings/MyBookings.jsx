@@ -10,8 +10,10 @@ const Details = () => {
 
   useEffect(() => {
     const existingBookings = localStorage.getItem("bookings") || [];
+    if(existingBookings.length>0){
     setBookings(JSON.parse(existingBookings).reverse());
     setFilteredList(JSON.parse(existingBookings).reverse());
+    }
   }, []);
 
   return (
