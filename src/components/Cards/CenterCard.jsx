@@ -252,7 +252,7 @@ const CenterCard = ({ data, slots, handleBooking, isForBooking }) => {
             <Typography
               sx={{
                 textTransform: "capitalize",
-                fontSize: "1vw",
+                fontSize: {xs:"1.5vw", sm:"1vw"} ,
                 lineHeight: 1,
                 color: "#00A500",
                 fontWeight: "bold",
@@ -263,8 +263,8 @@ const CenterCard = ({ data, slots, handleBooking, isForBooking }) => {
             <Button
               handleclick={handleclick}
               width="100%"
-              height={{ xs: "2vw", md: "3vw" }}
-              fontSize="0.85vw"
+              height={{ xs: "4.5vw", sm: "3vw" }}
+              fontSize= {{xs:"2vw",sm:"0.85vw"}}  
               label={showCalendar ? "Hide Calendar" : "Book FREE Center Visit"}
             />
           </Box>
