@@ -151,51 +151,72 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
                 onClose={handleCloseNavMenu}
                 sx={{ display: { xs: "block", md: "none" } }}
               >
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography
-                    sx={{ textAlign: "center", color: "primary.dark" }}
-                  >
-                    Find Doctors
-                  </Typography>
-                </MenuItem>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography
+                      sx={{ textAlign: "center", color: "primary.dark" }}
+                      onClick={() => handleClick(1)}
+                    >
+                      Find Doctors
+                    </Typography>
+                  </MenuItem>
+                </Link>
 
                 <Link to="/search" style={{ textDecoration: "none" }}>
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography
                       sx={{ textAlign: "center", color: "primary.dark" }}
+                      onClick={() => handleClick(2)}
                     >
                       Hospitals
                     </Typography>
                   </MenuItem>
                 </Link>
+
+                <Link to="/medicines" style={{ textDecoration: "none" }}>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography
                     sx={{ textAlign: "center", color: "primary.dark" }}
+                    onClick={() => handleClick(3)}
                   >
                     Medicines
                   </Typography>
                 </MenuItem>
+                </Link>
+                
+                <Link to="/surgeries" style={{ textDecoration: "none" }}>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography
                     sx={{ textAlign: "center", color: "primary.dark" }}
+                    onClick={() => handleClick(4)}
                   >
                     Surgeries
                   </Typography>
                 </MenuItem>
+                </Link>
+
+                <Link to="/software" style={{ textDecoration: "none" }}>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography
                     sx={{ textAlign: "center", color: "primary.dark" }}
+                    onClick={() => handleClick(5)}
                   >
                     Software for Provider
                   </Typography>
                 </MenuItem>
+                </Link>
+                
+                <Link to="/facilities" style={{ textDecoration: "none" }}>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography
                     sx={{ textAlign: "center", color: "primary.dark" }}
+                    onClick={() => handleClick(6)}
                   >
                     Facilities
                   </Typography>
                 </MenuItem>
+                </Link>
+
                 <Link to="/my-bookings" style={{ textDecoration: "none" }}>
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography
@@ -206,6 +227,7 @@ function Header({ isForBooking = false, bookings, setFilteredList }) {
                     </Typography>
                   </MenuItem>
                 </Link>
+
               </Menu>
             </Box>
 
