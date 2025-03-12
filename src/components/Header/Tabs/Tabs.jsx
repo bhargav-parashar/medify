@@ -6,11 +6,11 @@ const Tabs = ({handleClick,selectedTab}) => {
   const selected = { 
     color:"primary.main",
     fontWeight:"bold",
-    fontSize:"0.5vw"
+    fontSize:"0.8vw"
   };
   const unSelected = { 
     color:"primary.dark",
-    fontSize:"0.5vw"
+    fontSize:"0.8vw"
   };
   return (  
     <Box sx={{ display: "flex", gap: "3vw" }}>
